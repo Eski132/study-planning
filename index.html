@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HAVO 5 Study Calendar — October 2026</title>
+<style>
+:root{--bg:#0d1014;--panel:#161b22;--panel2:#1d242d;--text:#eef2f6;--muted:#9ca8b5;--line:#2b3440;--blue:#7dd3fc;--violet:#a78bfa;--amber:#fbbf24;--red:#fb7185;--green:#86efac;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:1500px;margin:auto;padding:24px}
+header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:22px}
+h1{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:0 0 10px;letter-spacing:-.04em}
+.sub{color:var(--muted);max-width:900px;line-height:1.5}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{background:#131820;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer}
+button:hover{border-color:#485566}
+.status{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card b{display:block;font-size:1.4rem;margin-top:5px}
+.card small{color:var(--muted)}
+.bar{height:9px;background:#0f1318;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:10px}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--violet));transition:.2s}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px;color:var(--muted);font-size:.9rem}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+.dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--amber)}
+.week{margin:26px 0}
+.week-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
+.week-title h2{margin:0;font-size:1.25rem}
+.week-title span{color:var(--muted);font-size:.9rem}
+.week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.day{min-height:260px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.day.outside{opacity:.28}
+.day.trip{border-color:rgba(167,139,250,.7);background:linear-gradient(180deg,rgba(167,139,250,.08),transparent),var(--panel)}
+.day.examday{border-color:rgba(255, 13, 0, 0.75);background:linear-gradient(180deg,rgba(251,191,36,.08),transparent),var(--panel)}
+.day.today{outline:2px solid rgba(125,211,252,.65);outline-offset:2px}
+.date-head{display:flex;justify-content:space-between;align-items:center}
+.dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
+.num{font-size:1.25rem;font-weight:850}
+.special{font-size:.75rem;padding:6px 7px;border-radius:8px;background:#11161c;color:#d7dee7;border:1px solid var(--line)}
+.tasks{display:flex;flex-direction:column;gap:7px}
+.task{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;background:#11161c;border:1px solid #252e38;border-radius:10px;padding:8px;cursor:pointer}
+.task input{margin-top:3px;accent-color:var(--blue)}
+.task-copy{min-width:0}
+.task-copy b{font-size:.82rem;display:block;line-height:1.25}
+.task-copy small{display:block;color:var(--muted);font-size:.72rem;line-height:1.3;margin-top:2px}
+.task.done .task-copy{opacity:.42;text-decoration:line-through}
+.examtask{border-color:rgba(136, 20, 20, 0.288);background:rgba(251,191,36,.08)}
+.examtask .task-copy b{color:#ab3636}
+.empty{color:#606b77;font-size:.8rem;padding:10px 2px}
+.notes{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.notes .card p{color:var(--muted);margin:.4rem 0 0;line-height:1.5}
+footer{text-align:center;color:var(--muted);padding:28px 0 40px}
+@media(max-width:1150px){.week-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:760px){header{flex-direction:column}.status{grid-template-columns:1fr}.week-grid{grid-template-columns:1fr}.day{min-height:0}.notes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="card"><small>Completed</small><b><span id="pct">0</span>%</b><div class="bar"><span id="bar"></span></div></div>
+
+
+
+
+    <section class="week">
+      <div class="week-title"><h2>Week 40</h2><span>28 Sep – 04 Oct</span></div>
+      <div class="week-grid">
+    <article class="day outside" data-date="2026-09-28">
+      <div class="date-head">
+        <span class="dow">Mon</span>
+        <span class="num">28</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-09-29">
+      <div class="date-head">
+        <span class="dow">Tue</span>
+        <span class="num">29</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-09-30">
+      <div class="date-head">
+        <span class="dow">Wed</span>
+        <span class="num">30</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-10-01">
+      <div class="date-head">
+        <span class="dow">Thu</span>
+        <span class="num">1</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-10-02">
+      <div class="date-head">
+        <span class="dow">Fri</span>
+        <span class="num">2</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-10-03">
+      <div class="date-head">
+        <span class="dow">Sat</span>
+        <span class="num">3</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day" data-date="2026-10-04">
+      <div class="date-head">
+        <span class="dow">Sun</span>
+        <span class="num">4</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-04-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-04-1">
+          <span class="task-copy"><b>Wiskunde B</b><small>H8 basics + formulas — recall first, then problems</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-04-2">
+          <span class="task-copy"><b>Scheikunde</b><small>H4 — exercises + error log</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-04-3">
+          <span class="task-copy"><b>Nederlands</b><small>Essay structure: intro + conclusion</small></span>
+        </label></div>
+    </article></div>
+    </section>
+    <section class="week">
+      <div class="week-title"><h2>Week 41</h2><span>05 Oct – 11 Oct</span></div>
+      <div class="week-grid">
+    <article class="day" data-date="2026-10-05">
+      <div class="date-head">
+        <span class="dow">Mon</span>
+        <span class="num">5</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-05-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-05-1">
+          <span class="task-copy"><b>Economie</b><small>Module 6 — recall concepts, then exam questions</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-06">
+      <div class="date-head">
+        <span class="dow">Tue</span>
+        <span class="num">6</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-06-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-06-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — worked example, then solve without notes</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-06-2">
+          <span class="task-copy"><b>Informatica</b><small>SQL: SELECT / FROM / WHERE / ORDER BY</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-07">
+      <div class="date-head">
+        <span class="dow">Wed</span>
+        <span class="num">7</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-07-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-07-1">
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 problems</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-07-2">
+          <span class="task-copy"><b>Scheikunde</b><small>Module 5 — questions first, notes after</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-08">
+      <div class="date-head">
+        <span class="dow">Thu</span>
+        <span class="num">8</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-08-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-08-1">
+          <span class="task-copy"><b>Nederlands</b><small>Timed outline + one paragraph</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-09">
+      <div class="date-head">
+        <span class="dow">Fri</span>
+        <span class="num">9</span>
+      </div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-09-0">
+          <span class="task-copy"><b>Read book</b><small>30–45 min</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-10">
+      <div class="date-head">
+        <span class="dow">Sat</span>
+        <span class="num">10</span>
+      </div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-10-0">
+          <span class="task-copy"><b>Read book</b><small>30–45 min</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-11">
+      <div class="date-head">
+        <span class="dow">Sun</span>
+        <span class="num">11</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-11-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-11-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — mixed calculations</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-11-2">
+          <span class="task-copy"><b>Economie</b><small>Module 6 — recall + exam questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-11-3">
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 + error log</small></span>
+        </label></div>
+    </article></div>
+    </section>
+    <section class="week">
+      <div class="week-title"><h2>Week 42</h2><span>12 Oct – 18 Oct</span></div>
+      <div class="week-grid">
+    <article class="day" data-date="2026-10-12">
+      <div class="date-head">
+        <span class="dow">Mon</span>
+        <span class="num">12</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-12-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-12-1">
+          <span class="task-copy"><b>Scheikunde</b><small>H4 + Module 5 — closed-book recall + questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-12-2">
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 set</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-12-3">
+          <span class="task-copy"><b>Nederlands</b><small>Timed half-essay</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-13">
+      <div class="date-head">
+        <span class="dow">Tue</span>
+        <span class="num">13</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-13-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-13-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — problems + redo errors</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-13-2">
+          <span class="task-copy"><b>Economie</b><small>Module 6 — application questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-13-3">
+          <span class="task-copy"><b>Informatica</b><small>SQL — queries from prompts</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-14">
+      <div class="date-head">
+        <span class="dow">Wed</span>
+        <span class="num">14</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-14-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-14-1">
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed H8/H9 mini-test</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-14-2">
+          <span class="task-copy"><b>Scheikunde</b><small>Mixed H4/Module 5 questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-14-3">
+          <span class="task-copy"><b>Engels</b><small>Book themes + thesis + paragraph</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-15">
+      <div class="date-head">
+        <span class="dow">Thu</span>
+        <span class="num">15</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-15-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-15-1">
+          <span class="task-copy"><b>Nederlands</b><small>Full timed essay</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-15-2">
+          <span class="task-copy"><b>Natuurkunde</b><small>Formula recall + weak questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-15-3">
+          <span class="task-copy"><b>Economie</b><small>Mixed application questions</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-16">
+      <div class="date-head">
+        <span class="dow">Fri</span>
+        <span class="num">16</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-16-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-16-1">
+          <span class="task-copy"><b>Informatica</b><small>SQL — closed-book queries + corrections</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-16-2">
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-16-3">
+          <span class="task-copy"><b>Scheikunde</b><small>Retest weak areas</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-17">
+      <div class="date-head">
+        <span class="dow">Sat</span>
+        <span class="num">17</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-17-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-17-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>Mini mock + mark errors</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-17-2">
+          <span class="task-copy"><b>Economie</b><small>Mini mock</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-17-3">
+          <span class="task-copy"><b>Engels</b><small>Essay outline + body paragraph</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-18">
+      <div class="date-head">
+        <span class="dow">Sun</span>
+        <span class="num">18</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-18-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-18-1">
+          <span class="task-copy"><b>Nederlands</b><small>Final weak points + one outline</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-18-2">
+          <span class="task-copy"><b>Scheikunde</b><small>Mixed recall + targeted questions</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-18-3">
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed recall + recurring errors</small></span>
+        </label></div>
+    </article></div>
+    </section>
+    <section class="week">
+      <div class="week-title"><h2>Week 43</h2><span>19 Oct – 25 Oct</span></div>
+      <div class="week-grid">
+    <article class="day" data-date="2026-10-19">
+      <div class="date-head">
+        <span class="dow">Mon</span>
+        <span class="num">19</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-19-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-19-1">
+          <span class="task-copy"><b>Nederlands</b><small>Timed plan + intro/conclusion</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-19-2">
+          <span class="task-copy"><b>Scheikunde</b><small>Error log retest</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-20">
+      <div class="date-head">
+        <span class="dow">Tue</span>
+        <span class="num">20</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-20-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-20-1">
+          <span class="task-copy"><b>Economie</b><small>Final mixed set</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-20-2">
+          <span class="task-copy"><b>Wiskunde B</b><small>Maintenance mixed set</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-21">
+      <div class="date-head">
+        <span class="dow">Wed</span>
+        <span class="num">21</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-21-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-21-1">
+          <span class="task-copy"><b>Nederlands</b><small>Warm-up only: one outline + checklist</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-21-2">
+          <span class="task-copy"><b>Economie + Scheikunde</b><small>15 min each quick recall</small></span>
+        </label></div>
+    </article>
+    <article class="day examday" data-date="2026-10-22">
+      <div class="date-head">
+        <span class="dow">Thu</span>
+        <span class="num">22</span>
+      </div>
+      <div class="special">Exam day — no normal lessons</div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-22-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-22-1">
+          <span class="task-copy"><b>Nederlands EXAM</b><small>11:45–13:45</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-22-2">
+          <span class="task-copy"><b>Economie</b><small>Final review after a proper break</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-22-3">
+          <span class="task-copy"><b>Scheikunde</b><small>Error log + representative problems</small></span>
+        </label></div>
+    </article>
+    <article class="day examday" data-date="2026-10-23">
+      <div class="date-head">
+        <span class="dow">Fri</span>
+        <span class="num">23</span>
+      </div>
+      <div class="special">Exam day — no normal lessons</div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-23-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-23-1">
+          <span class="task-copy"><b>Economie EXAM</b><small>09:15–11:15</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-23-2">
+          <span class="task-copy"><b>Scheikunde EXAM</b><small>11:45–13:45</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-24">
+      <div class="date-head">
+        <span class="dow">Sat</span>
+        <span class="num">24</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-24-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-24-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>Timed H5/H10 practice</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-24-2">
+          <span class="task-copy"><b>Informatica</b><small>SQL queries from scratch</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-24-3">
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9</small></span>
+        </label></div>
+    </article>
+    <article class="day" data-date="2026-10-25">
+      <div class="date-head">
+        <span class="dow">Sun</span>
+        <span class="num">25</span>
+      </div>
+      
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-25-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-25-1">
+          <span class="task-copy"><b>Natuurkunde</b><small>Redo Saturday errors</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-25-2">
+          <span class="task-copy"><b>Informatica</b><small>Final SQL recall</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-25-3">
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-25-4">
+          <span class="task-copy"><b>Engels</b><small>Essay plan + book evidence</small></span>
+        </label></div>
+    </article></div>
+    </section>
+    <section class="week">
+      <div class="week-title"><h2>Week 44</h2><span>26 Oct – 01 Nov</span></div>
+      <div class="week-grid">
+    <article class="day examday" data-date="2026-10-26">
+      <div class="date-head">
+        <span class="dow">Mon</span>
+        <span class="num">26</span>
+      </div>
+      <div class="special">Exam day — no normal lessons</div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-26-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-26-1">
+          <span class="task-copy"><b>Informatica EXAM</b><small>10:15–11:15</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-26-2">
+          <span class="task-copy"><b>Natuurkunde EXAM</b><small>11:45–13:45</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-26-3">
+          <span class="task-copy"><b>Wiskunde B</b><small>Final error-log review</small></span>
+        </label></div>
+    </article>
+    <article class="day examday" data-date="2026-10-27">
+      <div class="date-head">
+        <span class="dow">Tue</span>
+        <span class="num">27</span>
+      </div>
+      <div class="special">Exam day — no normal lessons</div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-27-0">
+          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-27-1">
+          <span class="task-copy"><b>Wiskunde B EXAM</b><small>09:15–11:15</small></span>
+        </label>
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-27-2">
+          <span class="task-copy"><b>Engels</b><small>Final essay + book preparation</small></span>
+        </label></div>
+    </article>
+    <article class="day examday" data-date="2026-10-28">
+      <div class="date-head">
+        <span class="dow">Wed</span>
+        <span class="num">28</span>
+      </div>
+      <div class="special">Exam day — no normal lessons</div>
+      <div class="tasks">
+        <label class="task ">
+          <input type="checkbox" data-id="2026-10-28-0">
+          <span class="task-copy"><b>Read book</b><small>20–30 min</small></span>
+        </label>
+        <label class="task examtask">
+          <input type="checkbox" data-id="2026-10-28-1">
+          <span class="task-copy"><b>Engels EXAM</b><small>09:15–11:15</small></span>
+        </label></div>
+    </article>
+    <article class="day outside" data-date="2026-10-29">
+      <div class="date-head">
+        <span class="dow">Thu</span>
+        <span class="num">29</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-10-30">
+      <div class="date-head">
+        <span class="dow">Fri</span>
+        <span class="num">30</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-10-31">
+      <div class="date-head">
+        <span class="dow">Sat</span>
+        <span class="num">31</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article>
+    <article class="day outside" data-date="2026-11-01">
+      <div class="date-head">
+        <span class="dow">Sun</span>
+        <span class="num">1</span>
+      </div>
+      
+      <div class="tasks"><div class="empty">No study planned</div></div>
+    </article></div>
+    </section>
+
+
+<footer>This website was created with the assistance of AI and is intended for personal use only.</footer>
+</div>
+
+<script>
+const boxes=[...document.querySelectorAll('.task input')];
+let applyingRemote=false;
+let lastSnapshot='';
+
+function updateProgress(){
+ const done=boxes.filter(b=>b.checked).length;
+ const pct=boxes.length?Math.round(done/boxes.length*100):0;
+ document.getElementById('pct').textContent=pct;
+ document.getElementById('bar').style.width=pct+'%';
+}
+
+function applyState(state){
+ applyingRemote=true;
+ boxes.forEach(cb=>{
+  cb.checked=state[cb.dataset.id]===true;
+  cb.closest('.task').classList.toggle('done',cb.checked);
+  localStorage.setItem(cb.dataset.id,cb.checked?'1':'0');
+ });
+ applyingRemote=false;
+ updateProgress();
+}
+
+function cachedState(){
+ const state={};
+ boxes.forEach(cb=>state[cb.dataset.id]=localStorage.getItem(cb.dataset.id)==='1');
+ return state;
+}
+
+async function loadSharedProgress(){
+ try{
+  const res=await fetch('/api/progress',{cache:'no-store'});
+  if(!res.ok) throw new Error('sync unavailable');
+  const data=await res.json();
+  const state=data.progress||{};
+  const snapshot=JSON.stringify(state);
+  if(snapshot!==lastSnapshot){
+   lastSnapshot=snapshot;
+   applyState(state);
+  }
+ }catch{
+  if(!lastSnapshot) applyState(cachedState());
+ }
+}
+
+async function saveSharedProgress(id,checked){
+ localStorage.setItem(id,checked?'1':'0');
+ try{
+  const res=await fetch('/api/progress',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({id,checked})
+  });
+  if(!res.ok) throw new Error('sync unavailable');
+  const data=await res.json();
+  if(data.progress){
+   lastSnapshot=JSON.stringify(data.progress);
+   applyState(data.progress);
+  }
+ }catch{}
+}
+
+boxes.forEach(cb=>{
+ cb.checked=localStorage.getItem(cb.dataset.id)==='1';
+ cb.closest('.task').classList.toggle('done',cb.checked);
+ cb.addEventListener('change',()=>{
+  if(applyingRemote) return;
+  cb.closest('.task').classList.toggle('done',cb.checked);
+  updateProgress();
+  saveSharedProgress(cb.dataset.id,cb.checked);
+ });
+});
+updateProgress();
+loadSharedProgress();
+setInterval(loadSharedProgress,2000);
+
+function localKey(){
+ const d=new Date();
+ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+const todayEl=document.querySelector(`[data-date="${localKey()}"]`);
+if(todayEl) todayEl.classList.add('today');
+</script>
+</body>
+</html>
