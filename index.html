@@ -44,6 +44,9 @@ button:hover{border-color:#485566}
 .task-copy{min-width:0}
 .task-copy b{font-size:.82rem;display:block;line-height:1.25}
 .task-copy small{display:block;color:var(--muted);font-size:.72rem;line-height:1.3;margin-top:2px}
+.task-copy .study-meta{color:#b9d8ea;margin-top:6px}
+.task-copy .study-meta strong{color:#dbe9f3}
+.task-copy .study-description{line-height:1.45;margin-top:4px}
 .task.done .task-copy{opacity:.42;text-decoration:line-through}
 .examtask{border-color:rgba(136, 20, 20, 0.288);background:rgba(251,191,36,.08)}
 .examtask .task-copy b{color:#ab3636}
@@ -57,89 +60,9 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
 </head>
 <body>
 <div class="wrap">
+<header><div><h1>HAVO 5 Study Calendar</h1><p class="sub">October 5–28, 2026 · Each task shows what to study, how to study, and the estimated time needed. Study durations are estimates; exam times are fixed.</p></div></header>
 
-<div class="card"><small>Completed</small><b><span id="pct">0</span>%</b><div class="bar"><span id="bar"></span></div></div>
-
-
-
-
-    <section class="week">
-      <div class="week-title"><h2>Week 40</h2><span>28 Sep – 04 Oct</span></div>
-      <div class="week-grid">
-    <article class="day outside" data-date="2026-09-28">
-      <div class="date-head">
-        <span class="dow">Mon</span>
-        <span class="num">28</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day outside" data-date="2026-09-29">
-      <div class="date-head">
-        <span class="dow">Tue</span>
-        <span class="num">29</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day outside" data-date="2026-09-30">
-      <div class="date-head">
-        <span class="dow">Wed</span>
-        <span class="num">30</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day outside" data-date="2026-10-01">
-      <div class="date-head">
-        <span class="dow">Thu</span>
-        <span class="num">1</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day outside" data-date="2026-10-02">
-      <div class="date-head">
-        <span class="dow">Fri</span>
-        <span class="num">2</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day outside" data-date="2026-10-03">
-      <div class="date-head">
-        <span class="dow">Sat</span>
-        <span class="num">3</span>
-      </div>
-      
-      <div class="tasks"><div class="empty">No study planned</div></div>
-    </article>
-    <article class="day" data-date="2026-10-04">
-      <div class="date-head">
-        <span class="dow">Sun</span>
-        <span class="num">4</span>
-      </div>
-      
-      <div class="tasks">
-        <label class="task ">
-          <input type="checkbox" data-id="2026-10-04-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
-        </label>
-        <label class="task ">
-          <input type="checkbox" data-id="2026-10-04-1">
-          <span class="task-copy"><b>Wiskunde B</b><small>H8 basics + formulas — recall first, then problems</small></span>
-        </label>
-        <label class="task ">
-          <input type="checkbox" data-id="2026-10-04-2">
-          <span class="task-copy"><b>Scheikunde</b><small>H4 — exercises + error log</small></span>
-        </label>
-        <label class="task ">
-          <input type="checkbox" data-id="2026-10-04-3">
-          <span class="task-copy"><b>Nederlands</b><small>Essay structure: intro + conclusion</small></span>
-        </label></div>
-    </article></div>
-    </section>
-    <section class="week">
+<div class="card"><small>Completed</small><b><span id="pct">0</span>%</b><div class="bar"><span id="bar"></span></div></div><section class="week">
       <div class="week-title"><h2>Week 41</h2><span>05 Oct – 11 Oct</span></div>
       <div class="week-grid">
     <article class="day" data-date="2026-10-05">
@@ -151,11 +74,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-05-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-05-1">
-          <span class="task-copy"><b>Economie</b><small>Module 6 — recall concepts, then exam questions</small></span>
+          <span class="task-copy"><b>Economie</b><small>Module 6 — recall concepts, then exam questions</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Module 6 — recall concepts, then exam questions. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-06">
@@ -167,15 +90,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-06-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-06-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — worked example, then solve without notes</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — worked example, then solve without notes</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">H5/H10 — worked example, then solve without notes. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-06-2">
-          <span class="task-copy"><b>Informatica</b><small>SQL: SELECT / FROM / WHERE / ORDER BY</small></span>
+          <span class="task-copy"><b>Informatica</b><small>SQL: SELECT / FROM / WHERE / ORDER BY</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">SQL: SELECT / FROM / WHERE / ORDER BY. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-07">
@@ -187,15 +110,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-07-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-07-1">
-          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 problems</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 problems</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mixed H8/H9 problems. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-07-2">
-          <span class="task-copy"><b>Scheikunde</b><small>Module 5 — questions first, notes after</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Module 5 — questions first, notes after</small><small class="study-meta"><strong>Method:</strong> Reading and summarizing · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Module 5 — questions first, notes after. Read the relevant material and write a short summary of the essential points.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-08">
@@ -207,11 +130,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-08-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-08-1">
-          <span class="task-copy"><b>Nederlands</b><small>Timed outline + one paragraph</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Timed outline + one paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Timed outline + one paragraph. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-09">
@@ -222,7 +145,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-09-0">
-          <span class="task-copy"><b>Read book</b><small>30–45 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30–45 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30–45 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-10">
@@ -233,7 +156,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-10-0">
-          <span class="task-copy"><b>Read book</b><small>30–45 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30–45 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30–45 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-11">
@@ -245,19 +168,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-11-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-11-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — mixed calculations</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — mixed calculations</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">H5/H10 — mixed calculations. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-11-2">
-          <span class="task-copy"><b>Economie</b><small>Module 6 — recall + exam questions</small></span>
+          <span class="task-copy"><b>Economie</b><small>Module 6 — recall + exam questions</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Module 6 — recall + exam questions. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-11-3">
-          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 + error log</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 + error log</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mixed H8/H9 + error log. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label></div>
     </article></div>
     </section>
@@ -273,19 +196,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-12-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-12-1">
-          <span class="task-copy"><b>Scheikunde</b><small>H4 + Module 5 — closed-book recall + questions</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>H4 + Module 5 — closed-book recall + questions</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">H4 + Module 5 — closed-book recall + questions. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-12-2">
-          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 set</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9 set</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mixed H8/H9 set. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-12-3">
-          <span class="task-copy"><b>Nederlands</b><small>Timed half-essay</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Timed half-essay</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Timed half-essay. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-13">
@@ -297,19 +220,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-13-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-13-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — problems + redo errors</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>H5/H10 — problems + redo errors</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">H5/H10 — problems + redo errors. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-13-2">
-          <span class="task-copy"><b>Economie</b><small>Module 6 — application questions</small></span>
+          <span class="task-copy"><b>Economie</b><small>Module 6 — application questions</small><small class="study-meta"><strong>Method:</strong> Reading and summarizing · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Module 6 — application questions. Read the relevant material and write a short summary of the essential points.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-13-3">
-          <span class="task-copy"><b>Informatica</b><small>SQL — queries from prompts</small></span>
+          <span class="task-copy"><b>Informatica</b><small>SQL — queries from prompts</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">SQL — queries from prompts. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-14">
@@ -321,19 +244,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-14-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-14-1">
-          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed H8/H9 mini-test</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed H8/H9 mini-test</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Timed mixed H8/H9 mini-test. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-14-2">
-          <span class="task-copy"><b>Scheikunde</b><small>Mixed H4/Module 5 questions</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Mixed H4/Module 5 questions</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Mixed H4/Module 5 questions. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-14-3">
-          <span class="task-copy"><b>Engels</b><small>Book themes + thesis + paragraph</small></span>
+          <span class="task-copy"><b>Engels</b><small>Book themes + thesis + paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Book themes + thesis + paragraph. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-15">
@@ -345,19 +268,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-15-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-15-1">
-          <span class="task-copy"><b>Nederlands</b><small>Full timed essay</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Full timed essay</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Full timed essay. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-15-2">
-          <span class="task-copy"><b>Natuurkunde</b><small>Formula recall + weak questions</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>Formula recall + weak questions</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Formula recall + weak questions. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-15-3">
-          <span class="task-copy"><b>Economie</b><small>Mixed application questions</small></span>
+          <span class="task-copy"><b>Economie</b><small>Mixed application questions</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Mixed application questions. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-16">
@@ -369,19 +292,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-16-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-16-1">
-          <span class="task-copy"><b>Informatica</b><small>SQL — closed-book queries + corrections</small></span>
+          <span class="task-copy"><b>Informatica</b><small>SQL — closed-book queries + corrections</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">SQL — closed-book queries + corrections. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-16-2">
-          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Timed mixed set. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-16-3">
-          <span class="task-copy"><b>Scheikunde</b><small>Retest weak areas</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Retest weak areas</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Retest weak areas. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-17">
@@ -393,19 +316,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-17-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-17-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>Mini mock + mark errors</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>Mini mock + mark errors</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mini mock + mark errors. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-17-2">
-          <span class="task-copy"><b>Economie</b><small>Mini mock</small></span>
+          <span class="task-copy"><b>Economie</b><small>Mini mock</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Mini mock. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-17-3">
-          <span class="task-copy"><b>Engels</b><small>Essay outline + body paragraph</small></span>
+          <span class="task-copy"><b>Engels</b><small>Essay outline + body paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Essay outline + body paragraph. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-18">
@@ -417,19 +340,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-18-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-18-1">
-          <span class="task-copy"><b>Nederlands</b><small>Final weak points + one outline</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Final weak points + one outline</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Final weak points + one outline. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-18-2">
-          <span class="task-copy"><b>Scheikunde</b><small>Mixed recall + targeted questions</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Mixed recall + targeted questions</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Mixed recall + targeted questions. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-18-3">
-          <span class="task-copy"><b>Wiskunde B</b><small>Mixed recall + recurring errors</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed recall + recurring errors</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mixed recall + recurring errors. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article></div>
     </section>
@@ -445,15 +368,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-19-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-19-1">
-          <span class="task-copy"><b>Nederlands</b><small>Timed plan + intro/conclusion</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Timed plan + intro/conclusion</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Timed plan + intro/conclusion. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-19-2">
-          <span class="task-copy"><b>Scheikunde</b><small>Error log retest</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Error log retest</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Error log retest. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-20">
@@ -465,15 +388,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-20-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-20-1">
-          <span class="task-copy"><b>Economie</b><small>Final mixed set</small></span>
+          <span class="task-copy"><b>Economie</b><small>Final mixed set</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Final mixed set. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-20-2">
-          <span class="task-copy"><b>Wiskunde B</b><small>Maintenance mixed set</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Maintenance mixed set</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Maintenance mixed set. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-21">
@@ -485,15 +408,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-21-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-21-1">
-          <span class="task-copy"><b>Nederlands</b><small>Warm-up only: one outline + checklist</small></span>
+          <span class="task-copy"><b>Nederlands</b><small>Warm-up only: one outline + checklist</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Warm-up only: one outline + checklist. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-21-2">
-          <span class="task-copy"><b>Economie + Scheikunde</b><small>15 min each quick recall</small></span>
+          <span class="task-copy"><b>Economie + Scheikunde</b><small>15 min each quick recall</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">15 min each quick recall. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article>
     <article class="day examday" data-date="2026-10-22">
@@ -505,19 +428,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-22-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-22-1">
-          <span class="task-copy"><b>Nederlands EXAM</b><small>11:45–13:45</small></span>
+          <span class="task-copy"><b>Nederlands EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">Sit the Nederlands exam at the scheduled time. Bring the required materials.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-22-2">
-          <span class="task-copy"><b>Economie</b><small>Final review after a proper break</small></span>
+          <span class="task-copy"><b>Economie</b><small>Final review after a proper break</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Final review after a proper break. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-22-3">
-          <span class="task-copy"><b>Scheikunde</b><small>Error log + representative problems</small></span>
+          <span class="task-copy"><b>Scheikunde</b><small>Error log + representative problems</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 50 min (estimated)</small><small class="study-description">Error log + representative problems. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article>
     <article class="day examday" data-date="2026-10-23">
@@ -529,15 +452,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-23-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-23-1">
-          <span class="task-copy"><b>Economie EXAM</b><small>09:15–11:15</small></span>
+          <span class="task-copy"><b>Economie EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">Sit the Economie exam at the scheduled time. Bring the required materials.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-23-2">
-          <span class="task-copy"><b>Scheikunde EXAM</b><small>11:45–13:45</small></span>
+          <span class="task-copy"><b>Scheikunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">Sit the Scheikunde exam at the scheduled time. Bring the required materials.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-24">
@@ -549,19 +472,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-24-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-24-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>Timed H5/H10 practice</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>Timed H5/H10 practice</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Timed H5/H10 practice. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-24-2">
-          <span class="task-copy"><b>Informatica</b><small>SQL queries from scratch</small></span>
+          <span class="task-copy"><b>Informatica</b><small>SQL queries from scratch</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">SQL queries from scratch. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-24-3">
-          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Mixed H8/H9</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Mixed H8/H9. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label></div>
     </article>
     <article class="day" data-date="2026-10-25">
@@ -573,23 +496,23 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-25-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-25-1">
-          <span class="task-copy"><b>Natuurkunde</b><small>Redo Saturday errors</small></span>
+          <span class="task-copy"><b>Natuurkunde</b><small>Redo Saturday errors</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Redo Saturday errors. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-25-2">
-          <span class="task-copy"><b>Informatica</b><small>Final SQL recall</small></span>
+          <span class="task-copy"><b>Informatica</b><small>Final SQL recall</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Final SQL recall. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-25-3">
-          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Timed mixed set</small><small class="study-meta"><strong>Method:</strong> Practice tests · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Timed mixed set. Complete an oefentoets or a timed practice set, check your answers, and review the mistakes.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-25-4">
-          <span class="task-copy"><b>Engels</b><small>Essay plan + book evidence</small></span>
+          <span class="task-copy"><b>Engels</b><small>Essay plan + book evidence</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Essay plan + book evidence. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article></div>
     </section>
@@ -605,19 +528,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-26-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-26-1">
-          <span class="task-copy"><b>Informatica EXAM</b><small>10:15–11:15</small></span>
+          <span class="task-copy"><b>Informatica EXAM</b><small>10:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 60 min (exam: 10:15–11:15)</small><small class="study-description">Sit the Informatica exam at the scheduled time. Bring the required materials.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-26-2">
-          <span class="task-copy"><b>Natuurkunde EXAM</b><small>11:45–13:45</small></span>
+          <span class="task-copy"><b>Natuurkunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">Sit the Natuurkunde exam at the scheduled time. Bring the required materials.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-26-3">
-          <span class="task-copy"><b>Wiskunde B</b><small>Final error-log review</small></span>
+          <span class="task-copy"><b>Wiskunde B</b><small>Final error-log review</small><small class="study-meta"><strong>Method:</strong> Reviewing · <strong>Duration:</strong> 60 min (estimated)</small><small class="study-description">Final error-log review. Review your notes, explain the key ideas from memory, and revisit mistakes.</small></span>
         </label></div>
     </article>
     <article class="day examday" data-date="2026-10-27">
@@ -629,15 +552,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-27-0">
-          <span class="task-copy"><b>Read book</b><small>30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-27-1">
-          <span class="task-copy"><b>Wiskunde B EXAM</b><small>09:15–11:15</small></span>
+          <span class="task-copy"><b>Wiskunde B EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">Sit the Wiskunde B exam at the scheduled time. Bring the required materials.</small></span>
         </label>
         <label class="task ">
           <input type="checkbox" data-id="2026-10-27-2">
-          <span class="task-copy"><b>Engels</b><small>Final essay + book preparation</small></span>
+          <span class="task-copy"><b>Engels</b><small>Final essay + book preparation</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 45 min (estimated)</small><small class="study-description">Final essay + book preparation. Work through the writing or SQL task independently, then review and improve your work.</small></span>
         </label></div>
     </article>
     <article class="day examday" data-date="2026-10-28">
@@ -649,11 +572,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <label class="task ">
           <input type="checkbox" data-id="2026-10-28-0">
-          <span class="task-copy"><b>Read book</b><small>20–30 min</small></span>
+          <span class="task-copy"><b>Read book</b><small>20–30 min</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 20–30 min (planned)</small><small class="study-description">Read your book attentively and make brief notes about important events, themes and unfamiliar words.</small></span>
         </label>
         <label class="task examtask">
           <input type="checkbox" data-id="2026-10-28-1">
-          <span class="task-copy"><b>Engels EXAM</b><small>09:15–11:15</small></span>
+          <span class="task-copy"><b>Engels EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">Sit the Engels exam at the scheduled time. Bring the required materials.</small></span>
         </label></div>
     </article>
     <article class="day outside" data-date="2026-10-29">
