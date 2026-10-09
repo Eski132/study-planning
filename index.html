@@ -37,7 +37,7 @@ button:hover{border-color:#485566}
 .date-head{display:flex;justify-content:space-between;align-items:center}
 .dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
 .num{font-size:1.25rem;font-weight:850}
-.tasks{display:grid;grid-auto-rows:132px;gap:8px}
+.tasks{display:grid;grid-auto-rows:108px;gap:8px}
 .task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:var(--category-fill,#11161c);border:1px solid var(--category-border,#252e38);border-left:3px solid var(--category-accent,var(--blue));border-radius:10px;padding:10px;height:100%;min-height:0;overflow:hidden}
 .task input{margin-top:3px;accent-color:var(--category-accent,var(--blue));cursor:pointer}
 .task-copy{min-width:0}
@@ -46,7 +46,9 @@ button:hover{border-color:#485566}
 .task-open:focus-visible{outline:2px solid var(--category-accent,var(--blue));outline-offset:3px}
 .task-copy b{color:var(--text);font-size:.88rem;line-height:1.3;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .task-copy small{display:block;color:var(--muted);font-size:.75rem;line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
-.task-open > small:not(.study-meta):not(.study-description){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.task-open > small:not(.study-meta):not(.study-description){display:none}
+/* Keep official exam times visible; only lesson topics move into the popup. */
+.category-exam .task-open > small:not(.study-meta):not(.study-description){display:block}
 .task-open .study-meta,.task-open .study-description{display:none}
 .task-category{display:flex;justify-content:space-between;align-items:center;gap:4px;width:100%;min-height:20px;margin-top:auto;color:var(--category-accent,var(--blue));font-weight:650;font-size:.72rem;line-height:1.2;white-space:nowrap}
 .task-view{color:var(--muted);font-size:.88rem;font-weight:700;flex-shrink:0}
@@ -99,7 +101,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-12-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4 · Write a summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize one H4 subsection in your own words.
 • Include key terms and any formulas or rules from that subsection.
-• Compare your summary with the textbook and fill any gaps.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Compare your summary with the textbook and fill any gaps.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-12-2">
@@ -156,7 +158,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-14-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Formula summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Write a summary of the H9 exponential rules you have learned.
 • Explain what each formula is used for.
-• Include one worked H9 example from the textbook.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Include one worked H9 example from the textbook.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-14-2">
@@ -167,7 +169,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-14-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>Book · Themes summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize the important events and characters in your English book so far.
 • Write down the main themes in your own words.
-• Note a scene you could mention in your book essay.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Note a scene you could mention in your book essay.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-15">
@@ -196,7 +198,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-15-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Insurance summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize the insurance section of Module 6.
 • Define its important terms using your own words.
-• Add one example from the book for each key idea.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Add one example from the book for each key idea.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-16">
@@ -215,13 +217,13 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-16-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Syntax summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Write a clear summary of SELECT, FROM, WHERE and ORDER BY.
 • Explain what each part of a query does.
-• Copy one short example query and label each part.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Copy one short example query and label each part.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-summarizing">
           <input type="checkbox" data-id="2026-10-16-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize the trigonometry rules from H8 covered in class.
 • Write when to use each formula or rule.
-• Add one labelled example from H8 and check it with your notes.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Add one labelled example from H8 and check it with your notes.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-16-3">
@@ -273,13 +275,13 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <input type="checkbox" data-id="2026-10-18-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Essay · Structure summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize how to build a Dutch essay: introduction, thesis, arguments and conclusion.
 • List useful linking words and points from teacher feedback.
-• Turn your notes into a checklist for the next essay.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Turn your notes into a checklist for the next essay.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-summarizing">
           <input type="checkbox" data-id="2026-10-18-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Write a summary</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Summarize one difficult Module 5 subsection.
 • List the key terms, processes and rules taught in that section.
-• Compare with your textbook and correct anything missing.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></span></button>
+• Compare with your textbook and correct anything missing.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-18-3">
