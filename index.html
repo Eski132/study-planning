@@ -32,7 +32,8 @@ button:hover{border-color:#485566}
 .day{min-height:180px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
 .day.outside{opacity:.28}
 .day.trip{border-color:rgba(167,139,250,.7);background:linear-gradient(180deg,rgba(167,139,250,.08),transparent),var(--panel)}
-.day.examday{border-color:rgba(255, 13, 0, 0.75);background:linear-gradient(180deg,rgba(251,191,36,.08),transparent),var(--panel)}
+.day.examday{border-color:rgba(251,191,36,.55);background:linear-gradient(180deg,rgba(251,191,36,.08),transparent 55%),var(--panel)}
+.day.examday .special{background:#302615;border-color:rgba(251,191,36,.4);color:#fde68a}
 .day.today{outline:2px solid rgba(125,211,252,.65);outline-offset:2px}
 .date-head{display:flex;justify-content:space-between;align-items:center}
 .dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
@@ -52,8 +53,18 @@ button:hover{border-color:#485566}
 .task-view{color:var(--muted)}
 .task.done .task-copy{opacity:.5}
 .task.done .task-copy b{text-decoration:line-through}
-.examtask{border-color:rgba(136,20,20,.36);background:rgba(251,191,36,.06)}
-.examtask .task-copy b{color:#e89a8d}
+.examtask{border:1px solid rgba(251,191,36,.55);border-left:3px solid var(--amber);background:#2c2416}
+.examtask .task-copy b{color:#fde68a}
+.examtask .task-copy small{color:#e4d0aa}
+.examtask .task-time{color:#fcd34d}
+.examtask .task-view{color:#d0bea0}
+.examtask input{accent-color:var(--amber)}
+.examtask .task-open:hover b,.examtask .task-open:focus-visible b{color:#fff1c2}
+.practicetest{border:1px solid rgba(167,139,250,.52);border-left:3px solid var(--violet);background:rgba(167,139,250,.075)}
+.practicetest .task-copy b{color:#ddd6fe}
+.practicetest .task-time{color:#c4b5fd}
+.practicetest input{accent-color:var(--violet)}
+.practicetest .task-open:hover b,.practicetest .task-open:focus-visible b{color:#ede9fe}
 .lesson-dialog{width:min(92vw,520px);max-height:85vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 22px 75px #0009}
 .lesson-dialog::backdrop{background:rgba(0,0,0,.7)}
 .dialog-top{display:flex;align-items:start;justify-content:space-between;gap:12px}
@@ -229,12 +240,12 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task practicetest">
           <input type="checkbox" data-id="2026-10-17-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H5 section of your physics oefentoets.
 • Mark it and write down what went wrong.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task practicetest">
           <input type="checkbox" data-id="2026-10-17-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through an Economics Module 6 oefentoets.
 • Mark it and identify weak topics.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -312,7 +323,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task practicetest">
           <input type="checkbox" data-id="2026-10-20-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through another Module 6 oefentoets.
 • Mark it and revise weak concepts.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -409,7 +420,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task practicetest">
           <input type="checkbox" data-id="2026-10-24-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H10 part of a physics oefentoets.
 • Mark calculations and check units.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -447,7 +458,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Final exercises</small><small class="study-meta"><strong>Method:</strong> Closed-book SQL practice · <strong>Duration:</strong> 30 min</small><small class="study-description">• Write SQL queries from your course exercises without notes.
 • Check syntax and results.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task practicetest">
           <input type="checkbox" data-id="2026-10-25-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H8 part of a maths oefentoets.
 • Mark it and correct your mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
