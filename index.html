@@ -25,6 +25,12 @@ button:hover{border-color:#485566}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
 .dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--amber)}
 .week{margin:26px 0}
+/* Reserve the same row for exam-day notices in every column of an exam week. */
+.week.special-week .day{display:grid;grid-template-rows:28px 40px auto;align-content:start}
+.week.special-week .day .date-head{grid-row:1}
+.week.special-week .day .special{grid-row:2;align-self:start}
+.week.special-week .day .tasks{grid-row:3}
+
 .week-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
 .week-title h2{margin:0;font-size:1.25rem}
 .week-title span{color:var(--muted);font-size:.9rem}
@@ -39,18 +45,19 @@ button:hover{border-color:#485566}
 .dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
 .num{font-size:1.25rem;font-weight:850}
 .special{font-size:.75rem;padding:6px 7px;border-radius:8px;background:#11161c;color:#d7dee7;border:1px solid var(--line)}
-.tasks{display:flex;flex-direction:column;gap:7px}
-.task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:var(--category-fill,#11161c);border:1px solid var(--category-border,#252e38);border-left:3px solid var(--category-accent,var(--blue));border-radius:10px;padding:10px}
+.tasks{display:grid;grid-auto-rows:132px;gap:8px}
+.task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:var(--category-fill,#11161c);border:1px solid var(--category-border,#252e38);border-left:3px solid var(--category-accent,var(--blue));border-radius:10px;padding:10px;height:100%;min-height:0;overflow:hidden}
 .task input{margin-top:3px;accent-color:var(--category-accent,var(--blue));cursor:pointer}
 .task-copy{min-width:0}
-.task-open{display:block;text-align:left;width:100%;background:none;border:0;border-radius:6px;padding:0;cursor:pointer;font-weight:400}
+.task-open{display:flex;flex-direction:column;text-align:left;width:100%;height:100%;min-height:0;background:none;border:0;border-radius:6px;padding:0;cursor:pointer;font-weight:400}
 .task-open:hover b,.task-open:focus-visible b{color:var(--text)}
 .task-open:focus-visible{outline:2px solid var(--category-accent,var(--blue));outline-offset:3px}
-.task-copy b{color:var(--text);font-size:.88rem;display:block;line-height:1.3}
+.task-copy b{color:var(--text);font-size:.88rem;line-height:1.3;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .task-copy small{display:block;color:var(--muted);font-size:.75rem;line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
+.task-open > small:not(.study-meta):not(.study-description){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .task-open .study-meta,.task-open .study-description{display:none}
-.task-category{display:block;color:var(--category-accent,var(--blue));font-weight:650;font-size:.74rem;margin-top:8px;line-height:1.4}
-.task-view{color:var(--muted);font-weight:400}
+.task-category{display:flex;justify-content:space-between;align-items:center;gap:4px;width:100%;min-height:20px;margin-top:auto;color:var(--category-accent,var(--blue));font-weight:650;font-size:.72rem;line-height:1.2;white-space:nowrap}
+.task-view{color:var(--muted);font-size:.88rem;font-weight:700;flex-shrink:0}
 .task.done .task-copy{opacity:.5}
 .task.done .task-copy b{text-decoration:line-through}
 .category-reading{--category-accent:#a8c6e3;--category-fill:#192735;--category-border:#46627b}
@@ -74,7 +81,7 @@ button:hover{border-color:#485566}
 .notes .card p{color:var(--muted);margin:.4rem 0 0;line-height:1.5}
 footer{text-align:center;color:var(--muted);padding:28px 0 40px}
 @media(max-width:1150px){.week-grid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:760px){header{flex-direction:column}.status{grid-template-columns:1fr}.week-grid{grid-template-columns:1fr}.day{min-height:0}.notes{grid-template-columns:1fr}}
+@media(max-width:760px){header{flex-direction:column}.status{grid-template-columns:1fr}.week-grid{grid-template-columns:1fr}.day{min-height:0}.notes{grid-template-columns:1fr}.tasks{grid-auto-rows:minmax(108px,auto)}.task{min-height:108px}}
 </style>
 </head>
 <body>
@@ -94,22 +101,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-12-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-12-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4 · One subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Read the explanation for one H4 subsection.
-• Do its exercises in your textbook and check the answers.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do its exercises in your textbook and check the answers.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-12-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Work through exercises from one H8 subsection.
-• Check your answers and correct mistakes.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check your answers and correct mistakes.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-12-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Introduction</small><small class="study-meta"><strong>Method:</strong> Essay writing</small><small class="study-description">• Choose an essay topic and write your thesis.
-• Write the introduction and check its structure.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Write the introduction and check its structure.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-13">
@@ -122,22 +129,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-13-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-13-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5 · Medical imaging</small><small class="study-meta"><strong>Method:</strong> Worked examples</small><small class="study-description">• Study a worked example from H5.
-• Do the related H5 textbook exercises and check calculations.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do the related H5 textbook exercises and check calculations.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-summarizing">
           <input type="checkbox" data-id="2026-10-13-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Risk</small><small class="study-meta"><strong>Method:</strong> Summarizing</small><small class="study-description">• Read the part about risk in Economics Module 6.
-• Write a short summary and check the key terms.</small><span class="task-category">Summarizing<span class="task-view"> · Details ↗</span></span></button>
+• Write a short summary and check the key terms.</small><span class="task-category">Summarizing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-13-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · SELECT / WHERE</small><small class="study-meta"><strong>Method:</strong> SQL exercises</small><small class="study-description">• Work through your course's SELECT and WHERE exercises.
-• Run your queries and check the results.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Run your queries and check the results.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-14">
@@ -150,22 +157,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-14-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-14-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Exponential relationships</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Work through exercises from one H9 subsection.
-• Check the solutions and correct mistakes.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check the solutions and correct mistakes.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-14-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · One subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Read one subsection of Chemistry Module 5.
-• Do the exercises for it and check the answers.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do the exercises for it and check the answers.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-14-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Thesis</small><small class="study-meta"><strong>Method:</strong> Essay planning</small><small class="study-description">• Choose a theme from your English book.
-• Write a thesis and find supporting evidence.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Write a thesis and find supporting evidence.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-15">
@@ -178,22 +185,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-15-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-15-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Argument</small><small class="study-meta"><strong>Method:</strong> Essay writing</small><small class="study-description">• Write one argument paragraph for your Dutch essay.
-• Add an example and check the reasoning and spelling.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Add an example and check the reasoning and spelling.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-15-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Medical imaging</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Work through one H10 subsection.
-• Do its textbook exercises and check formulas and units.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do its textbook exercises and check formulas and units.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-15-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Insurance</small><small class="study-meta"><strong>Method:</strong> Case exercises</small><small class="study-description">• Read the insurance section of Economics Module 6.
-• Do the related case exercises and check answers.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do the related case exercises and check answers.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-16">
@@ -206,22 +213,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-16-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-16-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Filters and sorting</small><small class="study-meta"><strong>Method:</strong> SQL exercises</small><small class="study-description">• Work through WHERE and ORDER BY exercises.
-• Check query output and correct syntax errors.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check query output and correct syntax errors.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-16-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Continue your next unfinished H8 subsection.
-• Do the exercises and check your answers.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do the exercises and check your answers.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-16-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4 · Difficult exercises</small><small class="study-meta"><strong>Method:</strong> Error correction</small><small class="study-description">• Redo incorrect H4 textbook exercises without answers.
-• Compare your working with the solutions.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Compare your working with the solutions.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-17">
@@ -234,22 +241,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-17-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
           <input type="checkbox" data-id="2026-10-17-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets</small><small class="study-description">• Do the H5 section of your physics oefentoets.
-• Mark it and write down what went wrong.</small><span class="task-category">Oefentoets<span class="task-view"> · Details ↗</span></span></button>
+• Mark it and write down what went wrong.</small><span class="task-category">Oefentoets<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
           <input type="checkbox" data-id="2026-10-17-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets</small><small class="study-description">• Work through an Economics Module 6 oefentoets.
-• Mark it and identify weak topics.</small><span class="task-category">Oefentoets<span class="task-view"> · Details ↗</span></span></button>
+• Mark it and identify weak topics.</small><span class="task-category">Oefentoets<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-17-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Paragraph</small><small class="study-meta"><strong>Method:</strong> Essay writing</small><small class="study-description">• Write a body paragraph about your English book.
-• Support it with a scene and check grammar.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Support it with a scene and check grammar.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-18">
@@ -262,26 +269,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-18-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-18-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Improve a paragraph</small><small class="study-meta"><strong>Method:</strong> Feedback correction</small><small class="study-description">• Rewrite one weak paragraph using teacher feedback.
-• Check argument structure and spelling.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check argument structure and spelling.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-18-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Difficult subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Return to your most difficult Module 5 subsection.
-• Do its exercises and check solutions.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Do its exercises and check solutions.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-18-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Error correction</small><small class="study-description">• Redo incorrect H9 exercises without notes.
-• Check the steps and correct your mistakes.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check the steps and correct your mistakes.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article></div>
     </section>
-    <section class="week">
+    <section class="week special-week">
       <div class="week-title"><h2>Week 43</h2><span>19 Oct – 25 Oct</span></div>
       <div class="week-grid">
     <article class="day" data-date="2026-10-19">
@@ -294,17 +301,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-19-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-19-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Introduction / conclusion</small><small class="study-meta"><strong>Method:</strong> Essay writing</small><small class="study-description">• Write an introduction for a Dutch essay topic.
-• Write a matching conclusion and check both.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Write a matching conclusion and check both.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-19-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Oefentoets correction</small><small class="study-description">• Redo Module 5 questions missed in an oefentoets.
-• Check solutions and write down the errors.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check solutions and write down the errors.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-20">
@@ -317,17 +324,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-20-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
           <input type="checkbox" data-id="2026-10-20-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets</small><small class="study-description">• Work through another Module 6 oefentoets.
-• Mark it and revise weak concepts.</small><span class="task-category">Oefentoets<span class="task-view"> · Details ↗</span></span></button>
+• Mark it and revise weak concepts.</small><span class="task-category">Oefentoets<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-20-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Continue H8 exercises from an unfinished subsection.
-• Mark answers and focus on common mistakes.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Mark answers and focus on common mistakes.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-21">
@@ -340,17 +347,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-21-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-21-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Outline</small><small class="study-meta"><strong>Method:</strong> Essay planning</small><small class="study-description">• Outline a thesis, arguments and conclusion.
-• Check your essay checklist, then rest.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Check your essay checklist, then rest.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-recall">
           <input type="checkbox" data-id="2026-10-21-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie + Scheikunde</b><small>Module 6 · Key terms</small><small class="study-meta"><strong>Method:</strong> Active recall</small><small class="study-description">• Explain Module 6 key terms without looking at notes.
-• Check what you missed and correct it.</small><span class="task-category">Active recall<span class="task-view"> · Details ↗</span></span></button>
+• Check what you missed and correct it.</small><span class="task-category">Active recall<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-22">
@@ -363,22 +370,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-22-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-22-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Nederlands exam at 11:45–13:45.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-recall">
           <input type="checkbox" data-id="2026-10-22-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Final revision</small><small class="study-meta"><strong>Method:</strong> Active recall</small><small class="study-description">• After a break, recall insurance concepts from memory.
-• Check unclear terms; keep this session light.</small><span class="task-category">Active recall<span class="task-view"> · Details ↗</span></span></button>
+• Check unclear terms; keep this session light.</small><span class="task-category">Active recall<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-22-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Final corrections</small><small class="study-meta"><strong>Method:</strong> Error correction</small><small class="study-description">• Redo previously incorrect Module 5 exercises.
-• Check answers. Do not start new material.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check answers. Do not start new material.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-23">
@@ -391,17 +398,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-23-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-23-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Economie exam at 09:15–11:15.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-23-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Scheikunde exam at 11:45–13:45.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-24">
@@ -414,22 +421,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-24-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
           <input type="checkbox" data-id="2026-10-24-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets</small><small class="study-description">• Do the H10 part of a physics oefentoets.
-• Mark calculations and check units.</small><span class="task-category">Oefentoets<span class="task-view"> · Details ↗</span></span></button>
+• Mark calculations and check units.</small><span class="task-category">Oefentoets<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-24-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Queries</small><small class="study-meta"><strong>Method:</strong> SQL exercises</small><small class="study-description">• Work through the SQL exercises from your course.
-• Check SELECT, WHERE and ORDER BY outputs.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check SELECT, WHERE and ORDER BY outputs.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-24-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Exponential relationships</small><small class="study-meta"><strong>Method:</strong> Textbook exercises</small><small class="study-description">• Continue H9 exercises from your next subsection.
-• Check solutions and correct mistakes.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check solutions and correct mistakes.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-25">
@@ -442,31 +449,31 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-25-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-25-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Oefentoets correction</small><small class="study-description">• Redo wrong H10 questions from yesterday.
-• Check formulas and units against the solutions.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check formulas and units against the solutions.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
           <input type="checkbox" data-id="2026-10-25-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Final exercises</small><small class="study-meta"><strong>Method:</strong> Closed-book SQL practice</small><small class="study-description">• Write SQL queries from your course exercises without notes.
-• Check syntax and results.</small><span class="task-category">Exercises<span class="task-view"> · Details ↗</span></span></button>
+• Check syntax and results.</small><span class="task-category">Exercises<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
           <input type="checkbox" data-id="2026-10-25-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets</small><small class="study-description">• Do the H8 part of a maths oefentoets.
-• Mark it and correct your mistakes.</small><span class="task-category">Oefentoets<span class="task-view"> · Details ↗</span></span></button>
+• Mark it and correct your mistakes.</small><span class="task-category">Oefentoets<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-25-4">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Outline</small><small class="study-meta"><strong>Method:</strong> Essay planning</small><small class="study-description">• Create an outline about your English book.
-• Link each argument to evidence from the story.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Link each argument to evidence from the story.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article></div>
     </section>
-    <section class="week">
+    <section class="week special-week">
       <div class="week-title"><h2>Week 44</h2><span>26 Oct – 01 Nov</span></div>
       <div class="week-grid">
     <article class="day examday" data-date="2026-10-26">
@@ -479,22 +486,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-26-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-26-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica EXAM</b><small>10:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Informatica exam at 10:15–11:15.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-26-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Natuurkunde exam at 11:45–13:45.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
           <input type="checkbox" data-id="2026-10-26-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Final corrections</small><small class="study-meta"><strong>Method:</strong> Error correction</small><small class="study-description">• Redo one difficult H9 example from your error list.
-• Check your answer, then rest before the exam.</small><span class="task-category">Correcting mistakes<span class="task-view"> · Details ↗</span></span></button>
+• Check your answer, then rest before the exam.</small><span class="task-category">Corrections<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-27">
@@ -507,17 +514,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-27-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-27-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Wiskunde B exam at 09:15–11:15.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
           <input type="checkbox" data-id="2026-10-27-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Paragraph</small><small class="study-meta"><strong>Method:</strong> Timed writing</small><small class="study-description">• Write one book-essay paragraph under a timer.
-• Add evidence and check grammar.</small><span class="task-category">Writing<span class="task-view"> · Details ↗</span></span></button>
+• Add evidence and check grammar.</small><span class="task-category">Writing<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-28">
@@ -530,12 +537,12 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-28-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
-• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view"> · Details ↗</span></span></button>
+• Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
           <input type="checkbox" data-id="2026-10-28-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam</small><small class="study-description">• Attend the Engels exam at 09:15–11:15.
-• Bring the required materials.</small><span class="task-category">Exam<span class="task-view"> · Details ↗</span></span></button>
+• Bring the required materials.</small><span class="task-category">Exam<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div></div>
     </article>
     <article class="day outside" data-date="2026-10-29">
