@@ -25,12 +25,6 @@ button:hover{border-color:#485566}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
 .dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--amber)}
 .week{margin:26px 0}
-/* Reserve the same row for exam-day notices in every column of an exam week. */
-.week.special-week .day{display:grid;grid-template-rows:28px 40px auto;align-content:start}
-.week.special-week .day .date-head{grid-row:1}
-.week.special-week .day .special{grid-row:2;align-self:start}
-.week.special-week .day .tasks{grid-row:3}
-
 .week-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
 .week-title h2{margin:0;font-size:1.25rem}
 .week-title span{color:var(--muted);font-size:.9rem}
@@ -39,12 +33,10 @@ button:hover{border-color:#485566}
 .day.outside{opacity:.28}
 .day.trip{border-color:rgba(167,139,250,.7);background:linear-gradient(180deg,rgba(167,139,250,.08),transparent),var(--panel)}
 .day.examday{border-color:rgba(251,191,36,.55);background:linear-gradient(180deg,rgba(251,191,36,.08),transparent 55%),var(--panel)}
-.day.examday .special{background:#302615;border-color:rgba(251,191,36,.4);color:#fde68a}
 .day.today{outline:2px solid rgba(125,211,252,.65);outline-offset:2px}
 .date-head{display:flex;justify-content:space-between;align-items:center}
 .dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
 .num{font-size:1.25rem;font-weight:850}
-.special{font-size:.75rem;padding:6px 7px;border-radius:8px;background:#11161c;color:#d7dee7;border:1px solid var(--line)}
 .tasks{display:grid;grid-auto-rows:132px;gap:8px}
 .task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:var(--category-fill,#11161c);border:1px solid var(--category-border,#252e38);border-left:3px solid var(--category-accent,var(--blue));border-radius:10px;padding:10px;height:100%;min-height:0;overflow:hidden}
 .task input{margin-top:3px;accent-color:var(--category-accent,var(--blue));cursor:pointer}
@@ -100,7 +92,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-12-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
@@ -128,7 +120,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-13-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
@@ -156,7 +148,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-14-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
@@ -184,7 +176,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-15-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
@@ -212,7 +204,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-16-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exercises">
@@ -240,7 +232,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-17-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
@@ -268,7 +260,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-18-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
@@ -288,7 +280,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         </div></div>
     </article></div>
     </section>
-    <section class="week special-week">
+    <section class="week">
       <div class="week-title"><h2>Week 43</h2><span>19 Oct – 25 Oct</span></div>
       <div class="week-grid">
     <article class="day" data-date="2026-10-19">
@@ -300,7 +292,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-19-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
@@ -323,7 +315,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-20-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
@@ -346,7 +338,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-21-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-writing">
@@ -365,11 +357,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <span class="dow">Thu</span>
         <span class="num">22</span>
       </div>
-      <div class="special">Exam day — no normal lessons</div>
+      
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-22-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
@@ -393,11 +385,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <span class="dow">Fri</span>
         <span class="num">23</span>
       </div>
-      <div class="special">Exam day — no normal lessons</div>
+      
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-23-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
@@ -420,7 +412,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-24-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-oefentoets">
@@ -448,7 +440,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-25-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-corrections">
@@ -473,7 +465,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         </div></div>
     </article></div>
     </section>
-    <section class="week special-week">
+    <section class="week">
       <div class="week-title"><h2>Week 44</h2><span>26 Oct – 01 Nov</span></div>
       <div class="week-grid">
     <article class="day examday" data-date="2026-10-26">
@@ -481,11 +473,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <span class="dow">Mon</span>
         <span class="num">26</span>
       </div>
-      <div class="special">Exam day — no normal lessons</div>
+      
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-26-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
@@ -509,11 +501,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <span class="dow">Tue</span>
         <span class="num">27</span>
       </div>
-      <div class="special">Exam day — no normal lessons</div>
+      
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-27-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
@@ -532,11 +524,11 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         <span class="dow">Wed</span>
         <span class="num">28</span>
       </div>
-      <div class="special">Exam day — no normal lessons</div>
+      
       <div class="tasks">
         <div class="task category-reading">
           <input type="checkbox" data-id="2026-10-28-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Required reading</small><small class="study-meta"><strong>Method:</strong> Reading</small><small class="study-description">• Read the next section of your book.
 • Note an important event or passage.</small><span class="task-category">Reading<span class="task-view" aria-hidden="true">↗</span></span></button>
         </div>
         <div class="task category-exam">
