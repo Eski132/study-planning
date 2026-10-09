@@ -45,7 +45,8 @@ button:hover{border-color:#485566}
 .task-open{display:block;text-align:left;width:100%;background:none;border:0;border-radius:6px;padding:0;cursor:pointer;font-weight:400}
 .task-open:hover b,.task-open:focus-visible b{color:var(--blue)}
 .task-open:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-.task-open .study-meta,.task-open .study-description{display:none}
+.task-open .study-description{display:none}
+.task-open .study-meta{display:block;color:#a8d6ea;margin-top:6px;font-size:.69rem;line-height:1.45}
 .task-open::after{content:"View details ↗";display:block;font-size:.7rem;color:var(--blue);margin-top:6px}
 .lesson-dialog{width:min(92vw,520px);max-height:85vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 22px 75px #0009}
 .lesson-dialog::backdrop{background:rgba(0,0,0,.7)}
@@ -75,7 +76,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
 </head>
 <body>
 <div class="wrap">
-<header><div><h1>HAVO 5 Study Calendar</h1><p class="sub">October 12–28, 2026 · Short, manageable sessions. Each task is a small part of the topic; you do not need to finish a whole chapter in one sitting.</p></div></header>
+<header><div><h1>HAVO 5 Study Calendar</h1><p class="sub">October 12–28, 2026 · Named study methods, realistic times and clear steps. Click a lesson for its plan.</p></div></header>
 
 <div class="card"><small>Completed</small><b><span id="pct">0</span>%</b><div class="bar"><span id="bar"></span></div></div><section class="week">
       <div class="week-title"><h2>Week 42</h2><span>12 Oct – 18 Oct</span></div>
@@ -89,24 +90,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-12-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-12-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4: review one subsection</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4: review one subsection</small><small class="study-meta"><strong>Method:</strong> Guided reading + active recall · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (10 min) Read one subsection of Chemistry H4.
+• (10 min) Close the book and list 3 key ideas.
+• (15 min) Do 2 matching exercises and check answers.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-12-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8: solve 4 trigonometry exercises</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8: solve 4 trigonometry exercises</small><small class="study-meta"><strong>Method:</strong> Independent problem solving · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Recall the trigonometry rule in H8.
+• (25 min) Solve 4 H8 exercises with working.
+• (5 min) Check and correct mistakes.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-12-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Plan an essay introduction</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write an introduction and one argument paragraph
-• Check the argument, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Plan an essay introduction</small><small class="study-meta"><strong>Method:</strong> Essay planning · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Pick a Dutch essay prompt and thesis.
+• (20 min) Draft a focused introduction.
+• (5 min) Check structure and spelling.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-13">
@@ -118,23 +121,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-13-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-13-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: work through 2 medical-imaging calculations</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Work through 3 calculations from H5/H10 medical imaging
-• Check units and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: work through 2 medical-imaging calculations</small><small class="study-meta"><strong>Method:</strong> Worked-example practice · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (10 min) Study one H5/H10 medical-imaging example.
+• (20 min) Solve 2 similar calculations yourself.
+• (5 min) Check formulas, units and answers.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-13-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: learn 3 risk/insurance terms</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Review 3 concepts from Module 6: Risk and Insurance
-• Apply them in 3 short questions; check answers</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: learn 3 risk/insurance terms</small><small class="study-meta"><strong>Method:</strong> Active recall (closed-book) · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (10 min) Read 3 key terms from Economics Module 6.
+• (10 min) Explain all 3 without notes.
+• (10 min) Check definitions and fill gaps.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-13-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: write 3 SELECT/WHERE queries</small><small class="study-meta"><strong>Method:</strong> SQL practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write 3 SQL queries using SELECT, FROM, WHERE or ORDER BY
-• Check expected results and fix syntax mistakes</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: write 3 SELECT/WHERE queries</small><small class="study-meta"><strong>Method:</strong> Hands-on SQL drills · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Inspect a sample database table.
+• (20 min) Write 3 SELECT/FROM/WHERE queries.
+• (5 min) Check results and fix errors.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-14">
@@ -146,24 +152,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-14-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-14-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9: solve 4 exponential equations</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9: solve 4 exponential equations</small><small class="study-meta"><strong>Method:</strong> Independent problem solving · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Recall the rule needed for H9.
+• (25 min) Solve 4 H9 exponential exercises.
+• (5 min) Check and correct mistakes.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-14-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5: review one subsection</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5: review one subsection</small><small class="study-meta"><strong>Method:</strong> Guided reading + application · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (10 min) Read one subsection of Chemistry Module 5.
+• (15 min) Solve 2 exercises about it.
+• (10 min) Check answers and note 1 weak point.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-14-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>Book essay: choose a thesis</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Prepare one small part of your book-based essay (thesis, outline or paragraph)
-• Support it with one example from the book</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>Book essay: choose a thesis</small><small class="study-meta"><strong>Method:</strong> Book-theme analysis + essay planning · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (10 min) Choose a theme from your English book.
+• (15 min) Write one arguable essay thesis.
+• (5 min) Find one scene supporting the thesis.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-15">
@@ -175,23 +183,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-15-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-15-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Write an essay introduction and 1 argument</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write an introduction and one argument paragraph
-• Check the argument, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Write an essay introduction and 1 argument</small><small class="study-meta"><strong>Method:</strong> Guided essay drafting · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose a claim for a Dutch essay.
+• (20 min) Write an introduction and 1 argument paragraph.
+• (5 min) Check transitions and spelling.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-15-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: redo 2 difficult calculations</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Work through 3 calculations from H5/H10 medical imaging
-• Check units and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: redo 2 difficult calculations</small><small class="study-meta"><strong>Method:</strong> Error correction (without notes) · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 2 missed H5/H10 calculations.
+• (25 min) Redo them without looking at answers.
+• (5 min) Check formulas and units.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-15-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: solve 4 short application tasks</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Review 3 concepts from Module 6: Risk and Insurance
-• Apply them in 3 short questions; check answers</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: solve 4 short application tasks</small><small class="study-meta"><strong>Method:</strong> Case-based application · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose 4 short Economics Module 6 cases.
+• (20 min) Apply risk and insurance concepts.
+• (5 min) Compare answers with solutions.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-16">
@@ -203,24 +214,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-16-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-16-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: practise 3 filtering and sorting queries</small><small class="study-meta"><strong>Method:</strong> SQL practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write 3 SQL queries using SELECT, FROM, WHERE or ORDER BY
-• Check expected results and fix syntax mistakes</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: practise 3 filtering and sorting queries</small><small class="study-meta"><strong>Method:</strong> Hands-on SQL drills · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Recall WHERE and ORDER BY syntax.
+• (20 min) Write 3 filtering and sorting queries.
+• (5 min) Check returned rows and syntax.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-16-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8/H9: 4 mixed exercises</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8/H9: 4 mixed exercises</small><small class="study-meta"><strong>Method:</strong> Mixed exercise practice · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 2 H8 and 2 H9 exercises.
+• (25 min) Solve all 4 without solutions.
+• (5 min) Mark answers and identify errors.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-16-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4/Module 5: redo 3 previous mistakes</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4/Module 5: redo 3 previous mistakes</small><small class="study-meta"><strong>Method:</strong> Error analysis + retest · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Select 3 previously missed H4/Module 5 exercises.
+• (25 min) Redo them without solutions.
+• (5 min) Note what caused each error.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-17">
@@ -232,23 +245,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-17-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-17-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: mini-oefentoets (short)</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Work through 3 calculations from H5/H10 medical imaging
-• Check units and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5/H10: mini-oefentoets (short)</small><small class="study-meta"><strong>Method:</strong> Timed mini practice test (oefentoets) · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Select 3 H5/H10 medical-imaging tasks.
+• (25 min) Complete a timed mini-oefentoets.
+• (5 min) Mark answers and flag weak steps.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-17-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: mini-oefentoets (short)</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Review 3 concepts from Module 6: Risk and Insurance
-• Apply them in 3 short questions; check answers</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6: mini-oefentoets (short)</small><small class="study-meta"><strong>Method:</strong> Timed mini practice test (oefentoets) · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose a short Economics Module 6 oefentoets.
+• (20 min) Complete one manageable section.
+• (5 min) Mark answers and record 2 weak concepts.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-17-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>Book essay: write 1 body paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Prepare one small part of your book-based essay (thesis, outline or paragraph)
-• Support it with one example from the book</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>Book essay: write 1 body paragraph</small><small class="study-meta"><strong>Method:</strong> Evidence-based paragraph writing · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose an English book theme and scene.
+• (20 min) Write one supporting body paragraph.
+• (5 min) Check thesis link and grammar.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-18">
@@ -260,24 +276,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-18-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-18-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay: fix one weak paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Make a thesis and 3-point essay outline
-• Check the argument, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay: fix one weak paragraph</small><small class="study-meta"><strong>Method:</strong> Feedback-based rewriting · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose a weak Dutch essay paragraph.
+• (20 min) Rewrite argument and explanation.
+• (5 min) Check clarity and spelling.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-18-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4/Module 5: revise 3 difficult points</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4/Module 5: revise 3 difficult points</small><small class="study-meta"><strong>Method:</strong> Active recall + targeted exercises · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (10 min) Choose 3 difficult H4/Module 5 concepts.
+• (15 min) Explain them from memory and solve 2 exercises.
+• (10 min) Check answers and correct gaps.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-18-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8/H9: redo 4 difficult exercises</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8/H9: redo 4 difficult exercises</small><small class="study-meta"><strong>Method:</strong> Error analysis + retest · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 4 missed or difficult H8/H9 exercises.
+• (25 min) Redo all with working.
+• (5 min) Check solutions and label error types.</small></button>
         </div></div>
     </article></div>
     </section>
@@ -293,19 +311,20 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-19-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-19-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay: plan intro and conclusion</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Draft an essay introduction and conclusion
-• Check the argument, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay: plan intro and conclusion</small><small class="study-meta"><strong>Method:</strong> Timed essay planning · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Pick a Dutch essay topic and thesis.
+• (20 min) Plan intro, 2 arguments and conclusion.
+• (5 min) Check argument flow and spelling.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-19-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Chemistry: review 3 mistakes from oefentoets</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Chemistry: review 3 mistakes from oefentoets</small><small class="study-meta"><strong>Method:</strong> Oefentoets error correction · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 3 errors from a Chemistry H4/Module 5 oefentoets.
+• (25 min) Redo them without the answer sheet.
+• (5 min) Check and classify mistakes.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-20">
@@ -317,18 +336,20 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-20-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-20-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Economics: short Module 6 oefentoets</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Review 3 concepts from Module 6: Risk and Insurance
-• Apply them in 3 short questions; check answers</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Economics: short Module 6 oefentoets</small><small class="study-meta"><strong>Method:</strong> Timed practice test (oefentoets) · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Select a short Economics Module 6 oefentoets.
+• (20 min) Complete one section under a timer.
+• (5 min) Mark and list 2 weak points.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-20-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: 4 H8/H9 mixed exercises</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: 4 H8/H9 mixed exercises</small><small class="study-meta"><strong>Method:</strong> Spaced mixed practice · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Select 2 H8 and 2 H9 exercises.
+• (25 min) Solve without notes.
+• (5 min) Check and mark uncertain answers.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-21">
@@ -340,18 +361,18 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-21-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-21-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch: one 10-minute essay outline</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Make a thesis and 3-point essay outline
-• Check the argument, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch: one 10-minute essay outline</small><small class="study-meta"><strong>Method:</strong> Timed essay outlining · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• (10 min) Outline a Dutch essay: thesis, 2 arguments and conclusion.
+• (5 min) Check your writing checklist.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-21-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie + Scheikunde</b><small>Economics + Chemistry: short recall</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 20 min (estimated)</small><small class="study-description">• Recall 2 Module 6 concepts (10 min)
-• Recall 2 H4/Module 5 chemistry concepts (10 min)</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie + Scheikunde</b><small>Economics + Chemistry: short recall</small><small class="study-meta"><strong>Method:</strong> Active recall (two subjects) · <strong>Duration:</strong> 20 min (estimated)</small><small class="study-description">• (10 min) Explain 2 Economics Module 6 terms without notes.
+• (10 min) Recall 2 Chemistry H4/Module 5 concepts.</small></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-22">
@@ -363,24 +384,25 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-22-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-22-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Rewrite one weak essay paragraph
-• Check arguments, transitions and spelling</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Attend the Nederlands exam at 11:45–13:45.
+• Bring the required materials and follow school instructions.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-22-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Economie: revise 3 weak concepts</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Review 3 concepts from Module 6: Risk and Insurance
-• Apply them in 3 short questions; check answers</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Economie: revise 3 weak concepts</small><small class="study-meta"><strong>Method:</strong> Targeted active recall · <strong>Duration:</strong> 25 min (estimated)</small><small class="study-description">• (10 min) Select 3 weak Module 6 Economics concepts.
+• (10 min) Explain each from memory and check notes.
+• (5 min) Mark final weak points, then rest.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-22-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Scheikunde: revisit 3 mistakes</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Choose one small section from H4 or Module 5
-• Review it and solve 3 related exercises
-• Check mistakes; leave the next section for another day</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Scheikunde: revisit 3 mistakes</small><small class="study-meta"><strong>Method:</strong> Oefentoets error correction · <strong>Duration:</strong> 25 min (estimated)</small><small class="study-description">• (5 min) Select 3 Chemistry H4/Module 5 mistakes.
+• (15 min) Redo them without answers.
+• (5 min) Mark corrected solutions.</small></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-23">
@@ -392,18 +414,18 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-23-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-23-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Attend the Economie exam at the listed time
-• Bring required materials</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Attend the Economie exam at 09:15–11:15.
+• Bring the required materials and follow school instructions.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-23-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Attend the Scheikunde exam at the listed time
-• Bring required materials</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Attend the Scheikunde exam at 11:45–13:45.
+• Bring the required materials and follow school instructions.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-24">
@@ -415,23 +437,26 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-24-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-24-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>Physics: 4 medical-imaging questions</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Work through 3 calculations from H5/H10 medical imaging
-• Check units and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>Physics: 4 medical-imaging questions</small><small class="study-meta"><strong>Method:</strong> Independent calculation practice · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Select 4 H5/H10 medical-imaging exercises.
+• (25 min) Solve with units and full working.
+• (5 min) Check answers and mark weak steps.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-24-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: write 4 queries from scratch</small><small class="study-meta"><strong>Method:</strong> SQL practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write 3 SQL queries using SELECT, FROM, WHERE or ORDER BY
-• Check expected results and fix syntax mistakes</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: write 4 queries from scratch</small><small class="study-meta"><strong>Method:</strong> Hands-on SQL drills · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Select 4 database prompts.
+• (20 min) Write queries with SELECT, FROM, WHERE and ORDER BY.
+• (5 min) Check each result.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-24-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: 4 mixed H8/H9 exercises</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: 4 mixed H8/H9 exercises</small><small class="study-meta"><strong>Method:</strong> Mixed exercise practice · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 2 H8 and 2 H9 maths exercises.
+• (25 min) Solve in exam style.
+• (5 min) Check and correct answers.</small></button>
         </div></div>
     </article>
     <article class="day" data-date="2026-10-25">
@@ -443,28 +468,32 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-25-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-25-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>Physics: correct 3 missed questions</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Work through 3 calculations from H5/H10 medical imaging
-• Check units and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>Physics: correct 3 missed questions</small><small class="study-meta"><strong>Method:</strong> Oefentoets error correction · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 3 incorrect H5/H10 calculations from Saturday.
+• (25 min) Redo without solutions.
+• (5 min) Check formulas and units.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-25-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: recall SELECT/WHERE/ORDER BY</small><small class="study-meta"><strong>Method:</strong> SQL practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Write 3 SQL queries using SELECT, FROM, WHERE or ORDER BY
-• Check expected results and fix syntax mistakes</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL: recall SELECT/WHERE/ORDER BY</small><small class="study-meta"><strong>Method:</strong> Closed-book SQL retrieval · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Recall SELECT, FROM, WHERE and ORDER BY syntax.
+• (20 min) Write 3 queries without notes.
+• (5 min) Check syntax and outputs.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-25-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: short H8/H9 oefentoets</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: short H8/H9 oefentoets</small><small class="study-meta"><strong>Method:</strong> Timed mini practice test (oefentoets) · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• (5 min) Choose 4 mixed H8/H9 exercises.
+• (25 min) Complete them under a timer.
+• (5 min) Check answers and correct a mistake.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-25-4">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English: outline 1 book essay</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Prepare one small part of your book-based essay (thesis, outline or paragraph)
-• Support it with one example from the book</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English: outline 1 book essay</small><small class="study-meta"><strong>Method:</strong> Book-based essay outlining · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• (5 min) Choose a thesis about your English book.
+• (20 min) Outline intro and 2 evidence-based paragraphs.
+• (5 min) Check all points support the thesis.</small></button>
         </div></div>
     </article></div>
     </section>
@@ -480,23 +509,24 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-26-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-26-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica EXAM</b><small>10:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 60 min (exam: 10:15–11:15)</small><small class="study-description">• Write SQL queries using SELECT, FROM, WHERE and ORDER BY
-• Check the returned rows and fix mistakes</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica EXAM</b><small>10:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 60 min (exam: 10:15–11:15)</small><small class="study-description">• Attend the Informatica exam at 10:15–11:15.
+• Bring the required materials and follow school instructions.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-26-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Attend the Natuurkunde exam at the listed time
-• Bring required materials</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 11:45–13:45)</small><small class="study-description">• Attend the Natuurkunde exam at 11:45–13:45.
+• Bring the required materials and follow school instructions.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-26-3">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: review 3 common mistakes</small><small class="study-meta"><strong>Method:</strong> Small exercises and review · <strong>Duration:</strong> 35 min (estimated)</small><small class="study-description">• Complete 4 exercises on H8 trigonometry and H9 exponential relationships
-• Check answers and redo one mistake</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>Math B: review 3 common mistakes</small><small class="study-meta"><strong>Method:</strong> Light error-list revision · <strong>Duration:</strong> 20 min (estimated)</small><small class="study-description">• (5 min) Read 3 recurring H8/H9 mistakes.
+• (10 min) Redo 1 matching exercise without notes.
+• (5 min) Check, then rest after exams.</small></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-27">
@@ -508,18 +538,19 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-27-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-27-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Attend the Wiskunde B exam at the listed time
-• Bring required materials</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Attend the Wiskunde B exam at 09:15–11:15.
+• Bring the required materials and follow school instructions.</small></button>
         </div>
         <div class="task ">
           <input type="checkbox" data-id="2026-10-27-2">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English: write 1 practice paragraph</small><small class="study-meta"><strong>Method:</strong> Writing practice · <strong>Duration:</strong> 30 min (estimated)</small><small class="study-description">• Prepare one small part of your book-based essay (thesis, outline or paragraph)
-• Support it with one example from the book</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English: write 1 practice paragraph</small><small class="study-meta"><strong>Method:</strong> Timed paragraph writing · <strong>Duration:</strong> 25 min (estimated)</small><small class="study-description">• (5 min) Select a book-essay point and supporting scene.
+• (15 min) Write one English body paragraph.
+• (5 min) Check thesis link and grammar.</small></button>
         </div></div>
     </article>
     <article class="day examday" data-date="2026-10-28">
@@ -531,13 +562,13 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       <div class="tasks">
         <div class="task ">
           <input type="checkbox" data-id="2026-10-28-0">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min (estimated)</small><small class="study-description">• Read for 15 minutes
-• Note one important event or quotation</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>15 min · optional reading</small><small class="study-meta"><strong>Method:</strong> Close reading + note-taking · <strong>Duration:</strong> 15 min (optional)</small><small class="study-description">• 10m Read a section of your assigned book.
+• 5m Note one key event or useful passage.</small></button>
         </div>
         <div class="task examtask">
           <input type="checkbox" data-id="2026-10-28-1">
-          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Plan an essay and select evidence from the book
-• Check book evidence, structure and grammar</small></button>
+          <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam (scheduled) · <strong>Duration:</strong> 120 min (exam: 09:15–11:15)</small><small class="study-description">• Attend the Engels exam at 09:15–11:15.
+• Bring the required materials and follow school instructions.</small></button>
         </div></div>
     </article>
     <article class="day outside" data-date="2026-10-29">
@@ -578,10 +609,10 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
 <dialog id="lesson-dialog" class="lesson-dialog" aria-labelledby="lesson-title">
   <div class="dialog-top"><h2 id="lesson-title"></h2><button type="button" class="dialog-close" aria-label="Close lesson details">×</button></div>
   <p id="lesson-date" class="dialog-date"></p>
-  <p class="dialog-heading">Topic</p><p id="lesson-topic" class="dialog-value"></p>
-  <p class="dialog-heading">Study method</p><p id="lesson-method" class="dialog-value"></p>
-  <p class="dialog-heading">Duration</p><p id="lesson-duration" class="dialog-value"></p>
-  <p class="dialog-heading">To do</p><p id="lesson-description" class="dialog-value"></p>
+  <p class="dialog-heading">What to study</p><p id="lesson-topic" class="dialog-value"></p>
+  <p class="dialog-heading">How to study</p><p id="lesson-method" class="dialog-value"></p>
+  <p class="dialog-heading">How long</p><p id="lesson-duration" class="dialog-value"></p>
+  <p class="dialog-heading">Steps</p><p id="lesson-description" class="dialog-value"></p>
 </dialog>
 <footer>This website was created with the assistance of AI and is intended for personal use only.</footer>
 </div>
@@ -599,7 +630,7 @@ document.querySelectorAll('.task-open').forEach(button=>{
   document.getElementById('lesson-title').textContent=detailText(task.querySelector('b'));
   document.getElementById('lesson-date').textContent=new Date(date+'T12:00:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   document.getElementById('lesson-topic').textContent=detailText(task.querySelector('.task-copy > small:not(.study-meta):not(.study-description)'));
-  document.getElementById('lesson-method').textContent=method?.[1]||'Reviewing';
+  document.getElementById('lesson-method').textContent=method?.[1]||'Not specified';
   document.getElementById('lesson-duration').textContent=duration?.[1]||'See task';
   document.getElementById('lesson-description').textContent=detailText(task.querySelector('.study-description'));
   dialog.showModal();
