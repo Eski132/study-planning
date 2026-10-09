@@ -9,9 +9,6 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .wrap{max-width:1500px;margin:auto;padding:24px}
-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:22px}
-h1{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:0 0 10px;letter-spacing:-.04em}
-.sub{color:var(--muted);max-width:900px;line-height:1.5}
 .actions{display:flex;gap:8px;flex-wrap:wrap}
 button{background:#131820;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer}
 button:hover{border-color:#485566}
@@ -23,7 +20,7 @@ button:hover{border-color:#485566}
 .bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--violet));transition:.2s}
 .legend{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px;color:var(--muted);font-size:.9rem}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
-.dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--amber)}
+.dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--red)}
 .week{margin:26px 0}
 .week-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
 .week-title h2{margin:0;font-size:1.25rem}
@@ -32,7 +29,7 @@ button:hover{border-color:#485566}
 .day{min-height:180px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px}
 .day.outside{opacity:.28}
 .day.trip{border-color:rgba(167,139,250,.7);background:linear-gradient(180deg,rgba(167,139,250,.08),transparent),var(--panel)}
-.day.examday{border-color:rgba(251,191,36,.55);background:linear-gradient(180deg,rgba(251,191,36,.08),transparent 55%),var(--panel)}
+.day.examday{border-color:rgba(248,113,113,.6);background:linear-gradient(180deg,rgba(248,113,113,.09),transparent 55%),var(--panel)}
 .day.today{outline:2px solid rgba(125,211,252,.65);outline-offset:2px}
 .date-head{display:flex;justify-content:space-between;align-items:center}
 .dow{text-transform:uppercase;font-size:.73rem;letter-spacing:.08em;color:var(--muted)}
@@ -59,7 +56,7 @@ button:hover{border-color:#485566}
 .category-corrections{--category-accent:#ffa77a;--category-fill:#32241e;--category-border:#9a593c}
 .category-oefentoets{--category-accent:#c7aeff;--category-fill:#271f3d;--category-border:#7057aa}
 .category-recall{--category-accent:#e3d777;--category-fill:#2e2b18;--category-border:#8a7c3a}
-.category-exam{--category-accent:#ffbd75;--category-fill:#332419;--category-border:#a66a36}
+.category-exam{--category-accent:#ff858f;--category-fill:#331c22;--category-border:#a94658}
 .lesson-dialog{width:min(92vw,520px);max-height:85vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 22px 75px #0009}
 .lesson-dialog::backdrop{background:rgba(0,0,0,.7)}
 .dialog-top{display:flex;align-items:start;justify-content:space-between;gap:12px}
@@ -73,13 +70,11 @@ button:hover{border-color:#485566}
 .notes .card p{color:var(--muted);margin:.4rem 0 0;line-height:1.5}
 footer{text-align:center;color:var(--muted);padding:28px 0 40px}
 @media(max-width:1150px){.week-grid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:760px){header{flex-direction:column}.status{grid-template-columns:1fr}.week-grid{grid-template-columns:1fr}.day{min-height:0}.notes{grid-template-columns:1fr}.tasks{grid-auto-rows:minmax(108px,auto)}.task{min-height:108px}}
+@media(max-width:760px){.status{grid-template-columns:1fr}.week-grid{grid-template-columns:1fr}.day{min-height:0}.notes{grid-template-columns:1fr}.tasks{grid-auto-rows:minmax(108px,auto)}.task{min-height:108px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header><div><h1>HAVO 5 Study Calendar</h1><p class="sub">October 12–28, 2026 · Tasks only, grouped by study activity. Click for instructions. No study time limits.</p></div></header>
-
 <div class="card"><small>Completed</small><b><span id="pct">0</span>%</b><div class="bar"><span id="bar"></span></div></div><section class="week">
       <div class="week-title"><h2>Week 42</h2><span>12 Oct – 18 Oct</span></div>
       <div class="week-grid">
