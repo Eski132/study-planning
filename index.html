@@ -25,6 +25,12 @@ button:hover{border-color:#485566}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
 .dot.normal{background:var(--blue)} .dot.trip{background:var(--violet)} .dot.exam{background:var(--amber)}
 .week{margin:26px 0}
+/* Reserve the same row for exam-day notices in every column of an exam week. */
+.week.special-week .day{display:grid;grid-template-rows:28px 40px auto;align-content:start}
+.week.special-week .day .date-head{grid-row:1}
+.week.special-week .day .special{grid-row:2;align-self:start}
+.week.special-week .day .tasks{grid-row:3}
+
 .week-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:8px}
 .week-title h2{margin:0;font-size:1.25rem}
 .week-title span{color:var(--muted);font-size:.9rem}
@@ -282,7 +288,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         </div></div>
     </article></div>
     </section>
-    <section class="week">
+    <section class="week special-week">
       <div class="week-title"><h2>Week 43</h2><span>19 Oct – 25 Oct</span></div>
       <div class="week-grid">
     <article class="day" data-date="2026-10-19">
@@ -467,7 +473,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
         </div></div>
     </article></div>
     </section>
-    <section class="week">
+    <section class="week special-week">
       <div class="week-title"><h2>Week 44</h2><span>26 Oct – 01 Nov</span></div>
       <div class="week-grid">
     <article class="day examday" data-date="2026-10-26">
