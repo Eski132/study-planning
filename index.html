@@ -40,31 +40,36 @@ button:hover{border-color:#485566}
 .num{font-size:1.25rem;font-weight:850}
 .special{font-size:.75rem;padding:6px 7px;border-radius:8px;background:#11161c;color:#d7dee7;border:1px solid var(--line)}
 .tasks{display:flex;flex-direction:column;gap:7px}
-.task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:#11161c;border:1px solid #252e38;border-radius:10px;padding:10px}
-.task input{margin-top:3px;accent-color:var(--blue);cursor:pointer}
+.task{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px;align-items:start;background:var(--subject-fill,#11161c);border:1px solid var(--subject-border,#252e38);border-left:3px solid var(--subject-accent,var(--blue));border-radius:10px;padding:10px}
+.task input{margin-top:3px;accent-color:var(--subject-accent,var(--blue));cursor:pointer}
 .task-copy{min-width:0}
 .task-open{display:block;text-align:left;width:100%;background:none;border:0;border-radius:6px;padding:0;cursor:pointer;font-weight:400}
-.task-open:hover b,.task-open:focus-visible b{color:var(--blue)}
+.task-open:hover b,.task-open:focus-visible b{color:var(--text)}
 .task-open:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .task-copy b{font-size:.88rem;display:block;line-height:1.3}
 .task-copy small{display:block;color:var(--muted);font-size:.75rem;line-height:1.4;margin-top:4px;overflow-wrap:anywhere}
 .task-open .study-meta,.task-open .study-description{display:none}
-.task-time{display:block;color:var(--blue);font-size:.73rem;margin-top:8px;line-height:1.35}
+.task-time{display:block;color:var(--subject-accent,var(--blue));font-size:.73rem;margin-top:8px;line-height:1.35}
 .task-view{color:var(--muted)}
 .task.done .task-copy{opacity:.5}
 .task.done .task-copy b{text-decoration:line-through}
-.examtask{border:1px solid rgba(251,191,36,.55);border-left:3px solid var(--amber);background:#2c2416}
-.examtask .task-copy b{color:#fde68a}
-.examtask .task-copy small{color:#e4d0aa}
-.examtask .task-time{color:#fcd34d}
-.examtask .task-view{color:#d0bea0}
-.examtask input{accent-color:var(--amber)}
-.examtask .task-open:hover b,.examtask .task-open:focus-visible b{color:#fff1c2}
-.practicetest{border:1px solid rgba(167,139,250,.52);border-left:3px solid var(--violet);background:rgba(167,139,250,.075)}
-.practicetest .task-copy b{color:#ddd6fe}
-.practicetest .task-time{color:#c4b5fd}
-.practicetest input{accent-color:var(--violet)}
-.practicetest .task-open:hover b,.practicetest .task-open:focus-visible b{color:#ede9fe}
+.subject-reading{--subject-accent:#bac8d7;--subject-fill:#19212b;--subject-border:#394758}
+.subject-nederlands{--subject-accent:#ffa1b4;--subject-fill:#271b25;--subject-border:#6e4559}
+.subject-wiskunde-b{--subject-accent:#90baff;--subject-fill:#172337;--subject-border:#3a587d}
+.subject-scheikunde{--subject-accent:#85e5ae;--subject-fill:#15291f;--subject-border:#3a7055}
+.subject-natuurkunde{--subject-accent:#ffc08d;--subject-fill:#2a221b;--subject-border:#7c5940}
+.subject-economie{--subject-accent:#f8d977;--subject-fill:#292719;--subject-border:#74663b}
+.subject-informatica{--subject-accent:#c1adff;--subject-fill:#241c32;--subject-border:#675384}
+.subject-engels{--subject-accent:#83e0e6;--subject-fill:#15272c;--subject-border:#417880}
+.subject-economie-scheikunde{--subject-accent:#c5e993;--subject-fill:#232b1d;--subject-border:#647c47}
+.task-copy b{color:var(--subject-accent,var(--text))}
+.task-time{color:var(--subject-accent,var(--blue))}
+.task-open:hover b,.task-open:focus-visible b{color:var(--text)}
+.examtask{box-shadow:inset 0 3px 0 var(--amber)}
+.practicetest{box-shadow:inset 0 3px 0 var(--violet)}
+.examtask .task-time::before,.practicetest .task-time::before{content:"● ";font-size:.7rem}
+.examtask .task-time::before{color:var(--amber)}
+.practicetest .task-time::before{color:var(--violet)}
 .lesson-dialog{width:min(92vw,520px);max-height:85vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 22px 75px #0009}
 .lesson-dialog::backdrop{background:rgba(0,0,0,.7)}
 .dialog-top{display:flex;align-items:start;justify-content:space-between;gap:12px}
@@ -95,22 +100,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-12-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-12-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4 · One subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Read the explanation for one H4 subsection.
 • Do its exercises in your textbook and check the answers.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-12-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Work through exercises from one H8 subsection.
 • Check your answers and correct mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-nederlands">
           <input type="checkbox" data-id="2026-10-12-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Introduction</small><small class="study-meta"><strong>Method:</strong> Essay writing · <strong>Duration:</strong> 30 min</small><small class="study-description">• Choose an essay topic and write your thesis.
 • Write the introduction and check its structure.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -123,22 +128,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-13-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-13-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5 · Medical imaging</small><small class="study-meta"><strong>Method:</strong> Worked examples · <strong>Duration:</strong> 35 min</small><small class="study-description">• Study a worked example from H5.
 • Do the related H5 textbook exercises and check calculations.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-economie">
           <input type="checkbox" data-id="2026-10-13-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Risk</small><small class="study-meta"><strong>Method:</strong> Summarizing · <strong>Duration:</strong> 30 min</small><small class="study-description">• Read the part about risk in Economics Module 6.
 • Write a short summary and check the key terms.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-informatica">
           <input type="checkbox" data-id="2026-10-13-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · SELECT / WHERE</small><small class="study-meta"><strong>Method:</strong> SQL exercises · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through your course's SELECT and WHERE exercises.
 • Run your queries and check the results.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -151,22 +156,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-14-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-14-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Exponential relationships</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Work through exercises from one H9 subsection.
 • Check the solutions and correct mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-14-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · One subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Read one subsection of Chemistry Module 5.
 • Do the exercises for it and check the answers.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-engels">
           <input type="checkbox" data-id="2026-10-14-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Thesis</small><small class="study-meta"><strong>Method:</strong> Essay planning · <strong>Duration:</strong> 30 min</small><small class="study-description">• Choose a theme from your English book.
 • Write a thesis and find supporting evidence.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -179,22 +184,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-15-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-nederlands">
           <input type="checkbox" data-id="2026-10-15-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Argument</small><small class="study-meta"><strong>Method:</strong> Essay writing · <strong>Duration:</strong> 30 min</small><small class="study-description">• Write one argument paragraph for your Dutch essay.
 • Add an example and check the reasoning and spelling.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-15-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Medical imaging</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Work through one H10 subsection.
 • Do its textbook exercises and check formulas and units.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-economie">
           <input type="checkbox" data-id="2026-10-15-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Insurance</small><small class="study-meta"><strong>Method:</strong> Case exercises · <strong>Duration:</strong> 30 min</small><small class="study-description">• Read the insurance section of Economics Module 6.
 • Do the related case exercises and check answers.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -207,22 +212,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-16-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-informatica">
           <input type="checkbox" data-id="2026-10-16-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Filters and sorting</small><small class="study-meta"><strong>Method:</strong> SQL exercises · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through WHERE and ORDER BY exercises.
 • Check query output and correct syntax errors.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-16-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Continue your next unfinished H8 subsection.
 • Do the exercises and check your answers.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-16-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>H4 · Difficult exercises</small><small class="study-meta"><strong>Method:</strong> Error correction · <strong>Duration:</strong> 35 min</small><small class="study-description">• Redo incorrect H4 textbook exercises without answers.
 • Compare your working with the solutions.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -235,22 +240,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-17-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task practicetest">
+        <div class="task practicetest subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-17-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H5 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H5 section of your physics oefentoets.
 • Mark it and write down what went wrong.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task practicetest">
+        <div class="task practicetest subject-economie">
           <input type="checkbox" data-id="2026-10-17-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through an Economics Module 6 oefentoets.
 • Mark it and identify weak topics.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-engels">
           <input type="checkbox" data-id="2026-10-17-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Paragraph</small><small class="study-meta"><strong>Method:</strong> Essay writing · <strong>Duration:</strong> 30 min</small><small class="study-description">• Write a body paragraph about your English book.
 • Support it with a scene and check grammar.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -263,22 +268,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-18-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-nederlands">
           <input type="checkbox" data-id="2026-10-18-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Improve a paragraph</small><small class="study-meta"><strong>Method:</strong> Feedback correction · <strong>Duration:</strong> 30 min</small><small class="study-description">• Rewrite one weak paragraph using teacher feedback.
 • Check argument structure and spelling.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-18-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Difficult subsection</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Return to your most difficult Module 5 subsection.
 • Do its exercises and check solutions.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-18-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Error correction · <strong>Duration:</strong> 35 min</small><small class="study-description">• Redo incorrect H9 exercises without notes.
 • Check the steps and correct your mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -295,17 +300,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-19-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-nederlands">
           <input type="checkbox" data-id="2026-10-19-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Introduction / conclusion</small><small class="study-meta"><strong>Method:</strong> Essay writing · <strong>Duration:</strong> 30 min</small><small class="study-description">• Write an introduction for a Dutch essay topic.
 • Write a matching conclusion and check both.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-19-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Oefentoets correction · <strong>Duration:</strong> 35 min</small><small class="study-description">• Redo Module 5 questions missed in an oefentoets.
 • Check solutions and write down the errors.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -318,17 +323,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-20-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task practicetest">
+        <div class="task practicetest subject-economie">
           <input type="checkbox" data-id="2026-10-20-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through another Module 6 oefentoets.
 • Mark it and revise weak concepts.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-20-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Trigonometry</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Continue H8 exercises from an unfinished subsection.
 • Mark answers and focus on common mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -341,17 +346,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-21-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-nederlands">
           <input type="checkbox" data-id="2026-10-21-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands</b><small>Dutch essay · Outline</small><small class="study-meta"><strong>Method:</strong> Essay planning · <strong>Duration:</strong> 15 min</small><small class="study-description">• Outline a thesis, arguments and conclusion.
 • Check your essay checklist, then rest.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-economie-scheikunde">
           <input type="checkbox" data-id="2026-10-21-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie + Scheikunde</b><small>Module 6 · Key terms</small><small class="study-meta"><strong>Method:</strong> Active recall · <strong>Duration:</strong> 20 min</small><small class="study-description">• Explain Module 6 key terms without looking at notes.
 • Check what you missed and correct it.</small><span class="task-time">20 min <span class="task-view">· Details ↗</span></span></button>
@@ -364,22 +369,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       <div class="special">Exam day — no normal lessons</div>
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-22-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-nederlands">
           <input type="checkbox" data-id="2026-10-22-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Nederlands EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Nederlands exam at 11:45–13:45.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-economie">
           <input type="checkbox" data-id="2026-10-22-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie</b><small>Module 6 · Final revision</small><small class="study-meta"><strong>Method:</strong> Active recall · <strong>Duration:</strong> 25 min</small><small class="study-description">• After a break, recall insurance concepts from memory.
 • Check unclear terms; keep this session light.</small><span class="task-time">25 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-scheikunde">
           <input type="checkbox" data-id="2026-10-22-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde</b><small>Module 5 · Final corrections</small><small class="study-meta"><strong>Method:</strong> Error correction · <strong>Duration:</strong> 25 min</small><small class="study-description">• Redo previously incorrect Module 5 exercises.
 • Check answers. Do not start new material.</small><span class="task-time">25 min <span class="task-view">· Details ↗</span></span></button>
@@ -392,17 +397,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       <div class="special">Exam day — no normal lessons</div>
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-23-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-economie">
           <input type="checkbox" data-id="2026-10-23-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Economie EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Economie exam at 09:15–11:15.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-scheikunde">
           <input type="checkbox" data-id="2026-10-23-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Scheikunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Scheikunde exam at 11:45–13:45.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
@@ -415,22 +420,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-24-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task practicetest">
+        <div class="task practicetest subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-24-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H10 part of a physics oefentoets.
 • Mark calculations and check units.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-informatica">
           <input type="checkbox" data-id="2026-10-24-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Queries</small><small class="study-meta"><strong>Method:</strong> SQL exercises · <strong>Duration:</strong> 30 min</small><small class="study-description">• Work through the SQL exercises from your course.
 • Check SELECT, WHERE and ORDER BY outputs.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-24-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Exponential relationships</small><small class="study-meta"><strong>Method:</strong> Textbook exercises · <strong>Duration:</strong> 35 min</small><small class="study-description">• Continue H9 exercises from your next subsection.
 • Check solutions and correct mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
@@ -443,27 +448,27 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-25-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-25-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde</b><small>H10 · Incorrect exercises</small><small class="study-meta"><strong>Method:</strong> Oefentoets correction · <strong>Duration:</strong> 35 min</small><small class="study-description">• Redo wrong H10 questions from yesterday.
 • Check formulas and units against the solutions.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-informatica">
           <input type="checkbox" data-id="2026-10-25-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica</b><small>SQL · Final exercises</small><small class="study-meta"><strong>Method:</strong> Closed-book SQL practice · <strong>Duration:</strong> 30 min</small><small class="study-description">• Write SQL queries from your course exercises without notes.
 • Check syntax and results.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task practicetest">
+        <div class="task practicetest subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-25-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H8 · Practice test</small><small class="study-meta"><strong>Method:</strong> Oefentoets · <strong>Duration:</strong> 35 min</small><small class="study-description">• Do the H8 part of a maths oefentoets.
 • Mark it and correct your mistakes.</small><span class="task-time">35 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-engels">
           <input type="checkbox" data-id="2026-10-25-4">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Outline</small><small class="study-meta"><strong>Method:</strong> Essay planning · <strong>Duration:</strong> 30 min</small><small class="study-description">• Create an outline about your English book.
 • Link each argument to evidence from the story.</small><span class="task-time">30 min <span class="task-view">· Details ↗</span></span></button>
@@ -480,22 +485,22 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       <div class="special">Exam day — no normal lessons</div>
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-26-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-informatica">
           <input type="checkbox" data-id="2026-10-26-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Informatica EXAM</b><small>10:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 60 min</small><small class="study-description">• Attend the Informatica exam at 10:15–11:15.
 • Bring the required materials.</small><span class="task-time">Exam · 60 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-natuurkunde">
           <input type="checkbox" data-id="2026-10-26-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Natuurkunde EXAM</b><small>11:45–13:45</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Natuurkunde exam at 11:45–13:45.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-26-3">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B</b><small>H9 · Final corrections</small><small class="study-meta"><strong>Method:</strong> Error correction · <strong>Duration:</strong> 20 min</small><small class="study-description">• Redo one difficult H9 example from your error list.
 • Check your answer, then rest before the exam.</small><span class="task-time">20 min <span class="task-view">· Details ↗</span></span></button>
@@ -508,17 +513,17 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       <div class="special">Exam day — no normal lessons</div>
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-27-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-wiskunde-b">
           <input type="checkbox" data-id="2026-10-27-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Wiskunde B EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Wiskunde B exam at 09:15–11:15.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task ">
+        <div class="task subject-engels">
           <input type="checkbox" data-id="2026-10-27-2">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels</b><small>English book essay · Paragraph</small><small class="study-meta"><strong>Method:</strong> Timed writing · <strong>Duration:</strong> 25 min</small><small class="study-description">• Write one book-essay paragraph under a timer.
 • Add evidence and check grammar.</small><span class="task-time">25 min <span class="task-view">· Details ↗</span></span></button>
@@ -531,12 +536,12 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px}
       </div>
       <div class="special">Exam day — no normal lessons</div>
       <div class="tasks">
-        <div class="task ">
+        <div class="task subject-reading">
           <input type="checkbox" data-id="2026-10-28-0">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Read book</b><small>Optional reading</small><small class="study-meta"><strong>Method:</strong> Reading · <strong>Duration:</strong> 15 min</small><small class="study-description">• Read your book for 15 minutes.
 • Note an important event or passage.</small><span class="task-time">15 min <span class="task-view">· Details ↗</span></span></button>
         </div>
-        <div class="task examtask">
+        <div class="task examtask subject-engels">
           <input type="checkbox" data-id="2026-10-28-1">
           <button type="button" class="task-copy task-open" aria-label="View lesson details"><b>Engels EXAM</b><small>09:15–11:15</small><small class="study-meta"><strong>Method:</strong> School exam · <strong>Duration:</strong> 120 min</small><small class="study-description">• Attend the Engels exam at 09:15–11:15.
 • Bring the required materials.</small><span class="task-time">Exam · 120 min <span class="task-view">· Details ↗</span></span></button>
